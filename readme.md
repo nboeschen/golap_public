@@ -1,4 +1,5 @@
-# Golap
+# Golap Public Repo
+Code of the paper [GOLAP: A GPU-in-Data-Path Architecture for High-Speed OLAP](https://dl.acm.org/doi/10.1145/3698812)
 
 # Install packages:
 ```bash
