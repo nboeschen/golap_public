@@ -1,0 +1,19 @@
+strategy,compress,prune,time_ms,bw
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,true,57.40,31.14
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,false,92.13,19.41
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,true,55.13,32.43
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,false,148.60,12.03
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,true,21.36,83.72
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,false,51.85,34.48

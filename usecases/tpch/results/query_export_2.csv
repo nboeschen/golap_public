@@ -1,0 +1,927 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:BD:00.0
+# Slurm Info: 34538 32 1 gres:gpu:1
+# ../../../bin/tpch --dataflow=SSD2GPU2CPU --chunk_bytes=8388608,33554432,134217728 --comp_algo=UNCOMPRESSED,BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query1,query3,query5 --repeat=3 --scale_factor=200 --ssdpath=/raid/gds/300G.file --dbpath=/mnt/labstore/nboeschen/tpch/csv200/orders.csv --store_offset=0 --workers=6 --csv_delimiter=| --sort_by=general_dimsort --pruning=DONTPRUNE --pruning_param=16
+#[INFO ] Loading table data from disk ...
+# Loaded data from disk.
+#[INFO ] Prejoining tables for metadata ...
+#[INFO ] Sorting tables ...
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,229605510,274421800894,42000670720,42000645190,0,-1,45923,0.104318,2782.92,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,883164210,274414756714,42000670720,42000645190,0,-1,38654.1,1.72138,2488.34,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523810580,274412991564,42000670720,42000645190,0,-1,38704.2,0.491833,2676.61,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_tax (9600147472) -> 1027002368 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_returnflag (1200018434) -> 272736256 bytes (ratio of 0.23), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_linestatus (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 7230279680 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30904496262,274421800894,7230279680,42000645190,0,-1,42245,0.303045,3081.75,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 15282176 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_tax (9600147472) -> 1026256896 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_returnflag (1200018434) -> 269549568 bytes (ratio of 0.22), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_linestatus (1200018434) -> 15290368 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 7229353984 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32383808562,274414756714,7229353984,42000645190,0,-1,16522.8,0.043753,2364.76,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 14745600 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_tax (9600147472) -> 1029230592 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_returnflag (1200018434) -> 271044608 bytes (ratio of 0.23), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_linestatus (1200018434) -> 14749696 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 7251775488 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327469332,274412991564,7251775488,42000645190,0,-1,10041.4,0.033213,2536.48,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 440.22, Lineitem timer: 2112.64,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15930740370,274529796994,38400606208,38400589888,0,-1,41022.7,0.465834,2112.64,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 441.89, Lineitem timer: 2044.12,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16527675966,274522752814,38400606208,38400589888,0,-1,40049.3,0.630065,2044.12,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 440.52, Lineitem timer: 2030.26,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18941829920,274520987664,38400606208,38400589888,0,-1,34345.9,0.140867,2030.26,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.66, Lineitem timer: 846.25,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 10905612288 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,27968518098,274529796994,10905612288,38400589888,0,-1,23521.5,0.046418,846.245,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 2262742 total results, Order timer: 443.17, Lineitem timer: 651.92,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 10926129152 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29320428414,274522752814,10926129152,38400589888,0,-1,7311.95,0.075173,651.924,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.45, Lineitem timer: 607.07,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 10962210816 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,34754481248,274520987664,10962210816,38400589888,0,-1,6218.23,0.054023,607.069,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 332.97, Lineitem timer: 2080.28,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15634756090,274421798994,38400606208,38400589888,0,-1,25764.9,1.25568,2080.28,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 323.53, Lineitem timer: 1986.72,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16231691686,274414754814,38400606208,38400589888,0,-1,24383.8,0.023614,1986.72,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 323.52, Lineitem timer: 1986.60,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18645845640,274412989664,38400606208,38400589888,0,-1,14745.1,0.069953,1986.6,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3173494784 bytes (ratio of 0.33), using Bitcomp and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136126464 bytes (ratio of 0.01), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 320.21, Lineitem timer: 983.79,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 13830594560 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,22576371514,274421798994,13830594560,38400589888,0,-1,27581.7,0.135096,983.788,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3170017280 bytes (ratio of 0.33), using Bitcomp and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136310784 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 335.55, Lineitem timer: 779.19,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 13849681920 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,23928281830,274414754814,13849681920,38400589888,0,-1,20870.7,0.213305,779.19,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3169185792 bytes (ratio of 0.33), using Bitcomp and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136175616 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 321.12, Lineitem timer: 737.64,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 13885382656 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29362334664,274412989664,13885382656,38400589888,0,-1,17417.3,0.186695,737.642,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,229605510,274421800894,42000670720,42000645190,0,-1,49374.4,0.046339,2870.41,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,883164210,274414756714,42000670720,42000645190,0,-1,49820.3,0.569591,2513.36,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523810580,274412991564,42000670720,42000645190,0,-1,41552.6,2.43795,2741.03,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_tax (9600147472) -> 1027002368 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_returnflag (1200018434) -> 272736256 bytes (ratio of 0.23), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_linestatus (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 7230279680 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30904496262,274421800894,7230279680,42000645190,0,-1,41257.8,0.031329,3603.73,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 15282176 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_tax (9600147472) -> 1026256896 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_returnflag (1200018434) -> 269549568 bytes (ratio of 0.22), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_linestatus (1200018434) -> 15290368 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 7229353984 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32383808562,274414756714,7229353984,42000645190,0,-1,10997.8,0.034245,2376.52,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 14745600 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_tax (9600147472) -> 1029230592 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_returnflag (1200018434) -> 271044608 bytes (ratio of 0.23), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_linestatus (1200018434) -> 14749696 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 7251775488 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327469332,274412991564,7251775488,42000645190,0,-1,15007.1,0.763919,1892.42,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 443.23, Lineitem timer: 2051.20,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15930740370,274529796994,38400606208,38400589888,0,-1,14567.8,0.058421,2051.2,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 448.08, Lineitem timer: 1990.73,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16527675966,274522752814,38400606208,38400589888,0,-1,12909.2,0.053311,1990.73,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.73, Lineitem timer: 2025.32,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18941829920,274520987664,38400606208,38400589888,0,-1,12132.9,0.070354,2025.32,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.57, Lineitem timer: 838.91,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 10905612288 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,27968518098,274529796994,10905612288,38400589888,0,-1,11498.7,0.050876,838.908,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.85, Lineitem timer: 678.91,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 10926129152 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29320428414,274522752814,10926129152,38400589888,0,-1,8905.36,0.852257,678.915,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 441.15, Lineitem timer: 608.84,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 10962210816 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,34754481248,274520987664,10962210816,38400589888,0,-1,13391.4,0.988726,608.838,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 321.22, Lineitem timer: 2062.52,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15634756090,274421798994,38400606208,38400589888,0,-1,54242.4,3.78851,2062.52,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 319.65, Lineitem timer: 1985.71,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16231691686,274414754814,38400606208,38400589888,0,-1,44789.5,0.065695,1985.71,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 319.31, Lineitem timer: 1987.24,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18645845640,274412989664,38400606208,38400589888,0,-1,15053.5,0.059122,1987.24,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3173494784 bytes (ratio of 0.33), using Bitcomp and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136126464 bytes (ratio of 0.01), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 328.00, Lineitem timer: 1109.98,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 13830594560 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,22576371514,274421798994,13830594560,38400589888,0,-1,20676,3.79687,1109.98,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3170017280 bytes (ratio of 0.33), using Bitcomp and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136310784 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 321.31, Lineitem timer: 805.50,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 13849681920 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,23928281830,274414754814,13849681920,38400589888,0,-1,18615.9,2.53547,805.507,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3169185792 bytes (ratio of 0.33), using Bitcomp and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136175616 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 324.14, Lineitem timer: 749.84,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 13885382656 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29362334664,274412989664,13885382656,38400589888,0,-1,17662.6,0.33744,749.84,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,229605510,274421800894,42000670720,42000645190,0,-1,53078.6,5.43466,2799.69,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,883164210,274414756714,42000670720,42000645190,0,-1,40936.9,0.046138,2467.61,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 42000670720 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523810580,274412991564,42000670720,42000645190,0,-1,13263.9,0.044084,2543.73,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_tax (9600147472) -> 1027002368 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_returnflag (1200018434) -> 272736256 bytes (ratio of 0.23), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_linestatus (1200018434) -> 18759680 bytes (ratio of 0.02), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 7230279680 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30904496262,274421800894,7230279680,42000645190,0,-1,34820.7,0.041709,3521.16,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 15282176 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_tax (9600147472) -> 1026256896 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_returnflag (1200018434) -> 269549568 bytes (ratio of 0.22), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_linestatus (1200018434) -> 15290368 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 7229353984 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32383808562,274414756714,7229353984,42000645190,0,-1,19368.7,0.05244,2342.64,,,,
+#[INFO ] Compressed column l_quantity (1200018434) -> 14745600 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_tax (9600147472) -> 1029230592 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_returnflag (1200018434) -> 271044608 bytes (ratio of 0.23), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_linestatus (1200018434) -> 14749696 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 7550724044, 1132212533334580, 1075600725339589, 1118622895090088, 25.49, 38234.83, 0.05, 296120652
+# R, F, 7550893122, 1132228528683270, 1075616920991668, 1118642605132569, 25.49, 38235.82, 0.04, 296117231
+# N, F, 196954493, 29530584256784, 28053884291385, 29175797614634, 25.49, 38232.79, 0.05, 7723888
+# N, O, 14871661112, 2229987263371711, 2118486869353378, 2203227944354715, 25.50, 38237.79, 0.04, 583189298
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 7251775488 bytes (0.00)
+query1,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327469332,274412991564,7251775488,42000645190,0,-1,7531.89,0.046258,1896.32,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 439.58, Lineitem timer: 2060.32,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15930740370,274529796994,38400606208,38400589888,0,-1,12435.3,0.059042,2060.32,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 437.65, Lineitem timer: 2058.46,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16527675966,274522752814,38400606208,38400589888,0,-1,26546.5,0.423673,2058.46,,,,
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 439.23, Lineitem timer: 1991.58,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18941829920,274520987664,38400606208,38400589888,0,-1,11959.2,0.059192,1991.58,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_shipdate (9600147472) -> 248512512 bytes (ratio of 0.03), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.74, Lineitem timer: 847.16,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 10905612288 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,27968518098,274529796994,10905612288,38400589888,0,-1,12925.1,0.059142,847.157,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246464512 bytes (ratio of 0.03), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 438.98, Lineitem timer: 739.31,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 10926129152 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29320428414,274522752814,10926129152,38400589888,0,-1,8166.21,0.478708,740.081,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_shipdate (9600147472) -> 246013952 bytes (ratio of 0.03), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] l_orderkey: 833850560, o_orderdate: 790646400, o_shippriority: 0, revenue: 10714083
+#[INFO ] l_orderkey: 531084033, o_orderdate: 788832000, o_shippriority: 0, revenue: 2439058
+#[INFO ] l_orderkey: 397077314, o_orderdate: 788918400, o_shippriority: 0, revenue: 16025549
+#[INFO ] l_orderkey: 729724673, o_orderdate: 791942400, o_shippriority: 0, revenue: 17656646
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 636806659, o_orderdate: 793670400, o_shippriority: 0, revenue: 37716005
+#[INFO ] l_orderkey: 595965571, o_orderdate: 794448000, o_shippriority: 0, revenue: 17947173
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 1072936197, o_orderdate: 792547200, o_shippriority: 0, revenue: 23169688
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 1196213765, o_orderdate: 790732800, o_shippriority: 0, revenue: 2922979
+#[INFO ] l_orderkey: 645650886, o_orderdate: 788659200, o_shippriority: 0, revenue: 7566379
+#[INFO ] l_orderkey: 1161016962, o_orderdate: 788832000, o_shippriority: 0, revenue: 19993049
+#[INFO ] l_orderkey: 728141319, o_orderdate: 791424000, o_shippriority: 0, revenue: 8541180
+#[INFO ] l_orderkey: 906838403, o_orderdate: 788918400, o_shippriority: 0, revenue: 5091471
+#[INFO ] l_orderkey: 1112062273, o_orderdate: 789177600, o_shippriority: 0, revenue: 12093241
+#[INFO ] l_orderkey: 711191428, o_orderdate: 792633600, o_shippriority: 0, revenue: 14350315
+#[INFO ] l_orderkey: 165309635, o_orderdate: 790041600, o_shippriority: 0, revenue: 2756970
+#[INFO ] l_orderkey: 622095872, o_orderdate: 790041600, o_shippriority: 0, revenue: 13505559
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 737302081, o_orderdate: 790732800, o_shippriority: 0, revenue: 2814461
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] 2262742 total results, Order timer: 440.15, Lineitem timer: 605.33,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 10962210816 bytes (0.00)
+query3,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,34754481248,274520987664,10962210816,38400589888,0,-1,14175.1,0.110179,605.334,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 323.88, Lineitem timer: 2087.92,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,15634756090,274421798994,38400606208,38400589888,0,-1,59055.3,1.49713,2087.92,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 323.70, Lineitem timer: 2081.17,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16231691686,274414754814,38400606208,38400589888,0,-1,51002.3,1.19269,2081.17,,,,
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 324.74, Lineitem timer: 2012.95,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 38400606208 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,UNCOMPRESSED,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,18645845640,274412989664,38400606208,38400589888,0,-1,23152,0.028314,2012.96,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5012590592 bytes (ratio of 0.52), using Cascaded and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3173494784 bytes (ratio of 0.33), using Bitcomp and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4555198464 bytes (ratio of 0.47), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column l_discount (9600147472) -> 1089310720 bytes (ratio of 0.11), using ANS and 1145 chunks of size 8388608
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136126464 bytes (ratio of 0.01), using Gdeflate and 1145 chunks of size 8388608
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 323.05, Lineitem timer: 946.52,
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 13830594560 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,8388608,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,22576371514,274421798994,13830594560,38400589888,0,-1,12218.1,0.023094,946.52,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5023154176 bytes (ratio of 0.52), using Cascaded and 287 chunks of size 33554432
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3170017280 bytes (ratio of 0.33), using Bitcomp and 287 chunks of size 33554432
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4565512192 bytes (ratio of 0.48), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column l_discount (9600147472) -> 1090998272 bytes (ratio of 0.11), using ANS and 287 chunks of size 33554432
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136310784 bytes (ratio of 0.01), using Gdeflate and 287 chunks of size 33554432
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 324.92, Lineitem timer: 749.69,
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 13849681920 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,33554432,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,23928281830,274414754814,13849681920,38400589888,0,-1,8082.3,0.023194,749.689,,,,
+#[INFO ] Compressed column l_orderkey (9600147472) -> 5040205824 bytes (ratio of 0.53), using Cascaded and 72 chunks of size 134217728
+#[INFO ] Compressed column l_suppkey (9600147472) -> 3169185792 bytes (ratio of 0.33), using Bitcomp and 72 chunks of size 134217728
+#[INFO ] Compressed column l_extendedprice (9600147472) -> 4581449728 bytes (ratio of 0.48), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column l_discount (9600147472) -> 1094541312 bytes (ratio of 0.11), using ANS and 72 chunks of size 134217728
+#[INFO ] Compressed column meta_o_orderdate (9600147472) -> 136175616 bytes (ratio of 0.01), using Gdeflate and 72 chunks of size 134217728
+#[INFO ] id: 8, revenue: 1056693251555
+#[INFO ] id: 9, revenue: 1054648142622
+#[INFO ] id: 12, revenue: 1052219435195
+#[INFO ] id: 18, revenue: 1055112706676
+#[INFO ] id: 21, revenue: 1057801697332
+#[INFO ] 5 total results, Order timer: 321.08, Lineitem timer: 749.82,
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 13885382656 bytes (0.00)
+query5,SSD2GPU2CPU,200,,6,134217728,65536,BEST_BW_COMP,general_dimsort,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,29362334664,274412989664,13885382656,38400589888,0,-1,9985.48,2.20374,749.821,,,,
+#DONE

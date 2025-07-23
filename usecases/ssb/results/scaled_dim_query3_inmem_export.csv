@@ -1,0 +1,263 @@
+query,dataflow,scale_factor,customer_factor,core_pin,workers,extra_workers,add_cpu_threads,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:07:00.0
+# Slurm Info: 32132 32 1 gres:gpu:1
+# ../../../bin/ssb --dataflow=INMEM --chunk_bytes=0 --comp_algo=BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query3.1,query3.2,query3.3,query3.4 --repeat=1 --scale_factor=200 --ssdpath=/raid/gds/300G.file --dbpath=/mnt/labstore/nboeschen/ssb/diskdb200.dat --store_offset=0 --workers=16 --extra_workers=8 --add_cpu_threads=32 --customer_factor=1,25,50,100 --max_gpu_um_memory=0,16777216,67108864,268435456
+#[INFO ] Loading table data from disk ...
+#[INFO ] Prejoining tables for metadata ...
+#Hashtable Builds took 39.6631 ms
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,2326.08,,,,
+#Hashtable Builds took 39.1874 ms
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,2355.56,,,,
+#Hashtable Builds took 37.5539 ms
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,2339.59,,,,
+#Hashtable Builds took 39.2533 ms
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,2364.74,,,,
+#Hashtable Builds took 14.7891 ms
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1402.15,,,,
+#Hashtable Builds took 14.8688 ms
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1421.6,,,,
+#Hashtable Builds took 15.6225 ms
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1408.58,,,,
+#Hashtable Builds took 14.4059 ms
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1403.95,,,,
+#Hashtable Builds took 4.83239 ms
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1187.28,,,,
+#Hashtable Builds took 4.79246 ms
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1160.06,,,,
+#Hashtable Builds took 4.82784 ms
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1163.73,,,,
+#Hashtable Builds took 4.78338 ms
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1161.31,,,,
+#Hashtable Builds took 4.81946 ms
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1163.7,,,,
+#Hashtable Builds took 4.77362 ms
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1164.82,,,,
+#Hashtable Builds took 4.76263 ms
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1173.33,,,,
+#Hashtable Builds took 4.73019 ms
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,233387010624,0,33936429884,0,-1,-1,-1,1150.79,,,,
+#Hashtable Builds took 1044.84 ms
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,4065.59,,,,
+#Hashtable Builds took 1013.49 ms
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,4004.71,,,,
+#Hashtable Builds took 1039.32 ms
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,4032.61,,,,
+#Hashtable Builds took 1037.23 ms
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,3971.72,,,,
+#Hashtable Builds took 376.169 ms
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,2044.55,,,,
+#Hashtable Builds took 377.663 ms
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,2035.03,,,,
+#Hashtable Builds took 376.103 ms
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,2038.37,,,,
+#Hashtable Builds took 374.636 ms
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,2020.61,,,,
+#Hashtable Builds took 116.312 ms
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1488.02,,,,
+#Hashtable Builds took 101.01 ms
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1482.39,,,,
+#Hashtable Builds took 101.046 ms
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1473.83,,,,
+#Hashtable Builds took 103.295 ms
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1473.43,,,,
+#Hashtable Builds took 102.333 ms
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1475.43,,,,
+#Hashtable Builds took 108.602 ms
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1480.47,,,,
+#Hashtable Builds took 101.79 ms
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1477.75,,,,
+#Hashtable Builds took 100.28 ms
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,25,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,255275010624,0,42000429884,0,-1,-1,-1,1462.17,,,,
+#Hashtable Builds took 2174.17 ms
+#[INFO ] Sum of results            =149374184073883
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,5492.25,,,,
+#Hashtable Builds took 2146.55 ms
+#[INFO ] Sum of results            =149374184073883
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,5472.9,,,,
+#Hashtable Builds took 2162.65 ms
+#[INFO ] Sum of results            =149374184073883
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,5467.48,,,,
+#Hashtable Builds took 2163.43 ms
+#[INFO ] Sum of results            =149374184073883
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,5485.94,,,,
+#Hashtable Builds took 751.859 ms
+#[INFO ] Sum of results            =6005678401013
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,2573.1,,,,
+#Hashtable Builds took 757.606 ms
+#[INFO ] Sum of results            =6005678401013
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,2582.93,,,,
+#Hashtable Builds took 764.805 ms
+#[INFO ] Sum of results            =6005678401013
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,2587.28,,,,
+#Hashtable Builds took 756.47 ms
+#[INFO ] Sum of results            =6005678401013
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,2598.66,,,,
+#Hashtable Builds took 230.593 ms
+#[INFO ] Sum of results            =235147590664
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1760.43,,,,
+#Hashtable Builds took 222.285 ms
+#[INFO ] Sum of results            =235147590664
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1759.72,,,,
+#Hashtable Builds took 210.998 ms
+#[INFO ] Sum of results            =235147590664
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1739.86,,,,
+#Hashtable Builds took 210.634 ms
+#[INFO ] Sum of results            =235147590664
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1757.49,,,,
+#Hashtable Builds took 213.101 ms
+#[INFO ] Sum of results            =3488624376
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1747.78,,,,
+#Hashtable Builds took 211.524 ms
+#[INFO ] Sum of results            =3488624376
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1730.9,,,,
+#Hashtable Builds took 210.469 ms
+#[INFO ] Sum of results            =3488624376
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1748.55,,,,
+#Hashtable Builds took 210.582 ms
+#[INFO ] Sum of results            =3488624376
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,50,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,278075001408,0,50400429884,0,-1,-1,-1,1735.36,,,,
+#Hashtable Builds took 4409.99 ms
+#[INFO ] Sum of results            =149416692602991
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,8060.77,,,,
+#Hashtable Builds took 4389.32 ms
+#[INFO ] Sum of results            =149416692602991
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,8093.17,,,,
+#Hashtable Builds took 4402.46 ms
+#[INFO ] Sum of results            =149416692602991
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,8121.53,,,,
+#Hashtable Builds took 4404.94 ms
+#[INFO ] Sum of results            =149416692602991
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,8218.64,,,,
+#Hashtable Builds took 1543.37 ms
+#[INFO ] Sum of results            =6004624202085
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,3752.02,,,,
+#Hashtable Builds took 1519.49 ms
+#[INFO ] Sum of results            =6004624202085
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,3714.3,,,,
+#Hashtable Builds took 1518.74 ms
+#[INFO ] Sum of results            =6004624202085
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,3727.89,,,,
+#Hashtable Builds took 1531.7 ms
+#[INFO ] Sum of results            =6004624202085
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,3748.21,,,,
+#Hashtable Builds took 437.09 ms
+#[INFO ] Sum of results            =234241415313
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2371.71,,,,
+#Hashtable Builds took 457.341 ms
+#[INFO ] Sum of results            =234241415313
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2328.25,,,,
+#Hashtable Builds took 451.917 ms
+#[INFO ] Sum of results            =234241415313
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2327.12,,,,
+#Hashtable Builds took 462.964 ms
+#[INFO ] Sum of results            =234241415313
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2345.93,,,,
+#Hashtable Builds took 457.313 ms
+#[INFO ] Sum of results            =3296821384
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2331.02,,,,
+#Hashtable Builds took 459.766 ms
+#[INFO ] Sum of results            =3296821384
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,16777216,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2323.99,,,,
+#Hashtable Builds took 456.863 ms
+#[INFO ] Sum of results            =3296821384
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,67108864,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2331.92,,,,
+#Hashtable Builds took 458.708 ms
+#[INFO ] Sum of results            =3296821384
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,100,,16,8,32,0,65536,BEST_BW_COMP,natural,268435456,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,323674999360,0,67200429884,0,-1,-1,-1,2339.88,,,,
+#DONE

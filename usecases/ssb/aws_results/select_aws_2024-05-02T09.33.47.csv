@@ -1,0 +1,4 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3,customer_factor,extra_workers,add_cpu_threads
+# GPU   Info: Tesla T4, 00000000:00:1E.0
+# ../../../bin/ssb --dataflow=SSD2GPU --chunk_bytes=65536,262144,1048576,4194304,16777216,67108864 --comp_algo=UNCOMPRESSED,BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=select_orderpriority,select_commitdate,select_key --repeat=2 --scale_factor=25 --ssdpath=/dev/nvme1n1 --dbpath= --store_offset=0 --workers=4,8,16 --customer_factor=1 --sim_compute_us=-1 --event_sync=true --sort_by=natural
+#DONE

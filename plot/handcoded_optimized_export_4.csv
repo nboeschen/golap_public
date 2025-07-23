@@ -1,0 +1,37 @@
+strategy,compress,prune,time_ms,bw
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,true,93.81,19.06
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,false,153.01,12.68
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,true,102.84,17.38
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,false,274.85,7.50
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,true,19.95,94.59
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,false,52.27,39.20
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,true,68.38,26.15
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,false,156.75,12.41
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,true,100.93,17.71
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,false,274.55,7.51
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,true,21.10,92.72
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,false,53.34,37.52

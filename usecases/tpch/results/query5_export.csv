@@ -1,0 +1,205 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:90:00.0
+# Slurm Info: 34418 32 1 gres:gpu:1
+# ../../../bin/tpch --dataflow=SSD2GPU2CPU --chunk_bytes=8388608,33554432,134217728 --comp_algo=UNCOMPRESSED,BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query5 --repeat=4 --scale_factor=100 --ssdpath=/raid/gds/300G.file --dbpath=/mnt/labstore/nboeschen/tpch/csv200/orders.csv --store_offset=0 --workers=6 --csv_delimiter=| --sort_by=natural --pruning=DONTPRUNE --pruning_param=16
+#[INFO ] Loading table data from disk ...
+#[WARN ] Stopping csv reader at line idx 15000000, no slots left (15000000 total)
+#[WARN ] Stopping csv reader at line idx 1000000, no slots left (1000000 total)
+#[WARN ] Stopping csv reader at line idx 20000000, no slots left (20000000 total)
+#[WARN ] Stopping csv reader at line idx 80000000, no slots left (80000000 total)
+#[WARN ] Stopping csv reader at line idx 150000000, no slots left (150000000 total)
+#[WARN ] Stopping csv reader at line idx 750000000, no slots left (750000000 total)
+# Loaded data from disk.
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 311.26, Lineitem timer: 1767.05,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,7913351952,127006080360,24000004096,24000000000,0,-1,6785.27,0.011352,1767.05,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.19, Lineitem timer: 1748.17,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8517330654,127006079286,24000004096,24000000000,0,-1,6921.12,0.02631,1748.17,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.81, Lineitem timer: 1757.77,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,10933249490,127006079018,24000004096,24000000000,0,-1,7250.72,0.029777,1757.77,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.57, Lineitem timer: 493.65,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 5887766528 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,14854967376,127006080360,5887766528,24000000000,0,-1,5620.67,0.013074,493.649,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.89, Lineitem timer: 441.56,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 5883473920 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16213920798,127006079286,5883473920,24000000000,0,-1,3851.18,0.011853,441.565,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.27, Lineitem timer: 454.67,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 5904203776 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21649738514,127006079018,5904203776,24000000000,0,-1,3394.47,0.006312,454.672,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.94, Lineitem timer: 1752.27,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,7913351952,127006080360,24000004096,24000000000,0,-1,6830.29,0.006032,1752.27,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.92, Lineitem timer: 1748.96,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8517330654,127006079286,24000004096,24000000000,0,-1,6553.38,0.011281,1748.96,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.25, Lineitem timer: 1790.38,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,10933249490,127006079018,24000004096,24000000000,0,-1,7272.58,0.027622,1790.38,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.11, Lineitem timer: 507.85,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 5887766528 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,14854967376,127006080360,5887766528,24000000000,0,-1,5828.94,0.011952,507.848,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.31, Lineitem timer: 444.19,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 5883473920 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16213920798,127006079286,5883473920,24000000000,0,-1,3956.6,0.007514,444.187,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.87, Lineitem timer: 439.46,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 5904203776 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21649738514,127006079018,5904203776,24000000000,0,-1,3522.07,0.012975,439.457,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.44, Lineitem timer: 1811.03,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,7913351952,127006080360,24000004096,24000000000,0,-1,6932.58,0.012353,1811.03,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.21, Lineitem timer: 1767.38,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8517330654,127006079286,24000004096,24000000000,0,-1,6741.49,0.006192,1767.38,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.06, Lineitem timer: 1772.37,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,10933249490,127006079018,24000004096,24000000000,0,-1,6771.05,0.014377,1772.37,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.47, Lineitem timer: 508.81,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 5887766528 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,14854967376,127006080360,5887766528,24000000000,0,-1,5852.58,0.033153,508.806,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.02, Lineitem timer: 474.10,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 5883473920 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16213920798,127006079286,5883473920,24000000000,0,-1,4037.81,0.033123,474.1,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.03, Lineitem timer: 456.56,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 5904203776 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21649738514,127006079018,5904203776,24000000000,0,-1,3651.67,0.014347,456.557,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.51, Lineitem timer: 1794.48,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,7913351952,127006080360,24000004096,24000000000,0,-1,7257.38,0.006442,1794.48,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.65, Lineitem timer: 1739.30,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8517330654,127006079286,24000004096,24000000000,0,-1,6611.42,0.012364,1739.3,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.46, Lineitem timer: 1752.98,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,10933249490,127006079018,24000004096,24000000000,0,-1,6789.94,0.028955,1752.98,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 297.44, Lineitem timer: 488.02,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 5887766528 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,14854967376,127006080360,5887766528,24000000000,0,-1,5598.05,0.005871,488.016,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 296.96, Lineitem timer: 487.63,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 5883473920 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,16213920798,127006079286,5883473920,24000000000,0,-1,3907.6,0.006252,487.634,,,,
+#[INFO ] id: 8, revenue: 131741175615
+#[INFO ] id: 9, revenue: 131146929880
+#[INFO ] id: 12, revenue: 131244705170
+#[INFO ] id: 18, revenue: 131686103086
+#[INFO ] id: 21, revenue: 132981126516
+#[INFO ] 5 total results, Order timer: 295.34, Lineitem timer: 453.34,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 5904203776 bytes (0.00)
+query5,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21649738514,127006079018,5904203776,24000000000,0,-1,3597.95,0.030117,453.34,,,,
+#DONE

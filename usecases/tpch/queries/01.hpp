@@ -1,0 +1,316 @@
+#pragma once
+#include <any>
+
+#include "common.cuh"
+
+using RETURNFLAG_TYPE = decltype(Lineitem::l_returnflag);
+using LINESTATUS_TYPE = decltype(Lineitem::l_linestatus);
+using QUANTITY_TYPE = decltype(Lineitem::l_quantity);
+using EXTENDEDPRICE_TYPE = decltype(Lineitem::l_extendedprice);
+using DISCOUNT_TYPE = decltype(Lineitem::l_discount);
+using TAX_TYPE = decltype(Lineitem::l_tax);
+using SHIPDATE_TYPE = decltype(Lineitem::l_shipdate);
+using LINESTATUS_TYPE = decltype(Lineitem::l_linestatus);
+
+#include "01.cuh"
+#include "../helper.hpp"
+
+template <typename BLOCK_ENV>
+bool query1gen(TPCHColLayout &obj, util::Date date_hi){
+    cudaSetDevice(obj.var.cuda_device);
+    uint64_t tuples_per_chunk = obj.var.chunk_bytes / 8;
+    obj.var.comp_bytes = 0;
+    obj.var.uncomp_bytes = 0;
+    /**
+     * - Write the chunk-compressed table to disk.
+     */
+    obj.var.comp_ms = 0.0;
+    const std::unordered_map<std::string,std::tuple<uint64_t,golap::MetaFlags>> columns{
+        {"l_returnflag",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_linestatus",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_quantity",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_extendedprice",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_discount",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_tax",{tuples_per_chunk,golap::MetaFlags::DATA}},
+        {"l_shipdate",{tuples_per_chunk,golap::MetaFlags::DATA|golap::MetaFlags::META}},
+    };
+
+    std::unordered_map<std::string, golap::CompInfo> compinfos;
+    std::unordered_map<std::string, std::any> minmaxmeta;
+    std::unordered_map<std::string, std::any> histmeta;
+    std::unordered_map<std::string, std::any> bloommeta;
+    compinfos.reserve(columns.size());
+    minmaxmeta.reserve(columns.size());
+    histmeta.reserve(columns.size());
+    bloommeta.reserve(columns.size());
+
+    auto compress_columns_fun = [&](auto& a_col, uint64_t num_tuples, uint64_t col_idx){
+        auto entry = columns.find(a_col.attr_name);
+        if (entry == columns.end()) return;
+
+        auto& [tuples_per_chunk,usage] = entry->second;
+
+        using COL_TYPE = typename std::remove_reference<decltype(a_col)>::type::value_t;
+
+        auto algo = obj.var.comp_algo;
+        if(obj.var.comp_algo == "BEST_BW_COMP"){
+            if (BEST_BW_COMP.find(a_col.attr_name) == BEST_BW_COMP.end()) algo = "Gdeflate";
+            else algo = BEST_BW_COMP.at(a_col.attr_name);
+        }
+
+        compinfos[a_col.attr_name] = golap::CompInfo{tuples_per_chunk*a_col.value_size,
+                                                     num_tuples*a_col.value_size,
+                                                     algo, obj.var.nvchunk};
+
+        if (obj.var.chunk_bytes == (uint64_t)-1) compinfos[a_col.attr_name].chunk_bytes = (uint64_t) -1;
+        for (auto &tup_count : obj.var.chunk_size_vec) compinfos[a_col.attr_name].chunk_size_vec.push_back(tup_count*a_col.value_size);
+
+        golap::MinMaxMeta<COL_TYPE> *minmaxptr = nullptr;
+        golap::EqHistogram<COL_TYPE> *histptr = nullptr;
+        golap::BloomMeta<COL_TYPE> *bloomptr = nullptr;
+
+        if (usage & golap::MetaFlags::META){
+            minmaxmeta.try_emplace(a_col.attr_name, std::in_place_type<golap::MinMaxMeta<COL_TYPE>>);
+            minmaxptr = &std::any_cast<golap::MinMaxMeta<COL_TYPE>&>(minmaxmeta[a_col.attr_name]);
+
+            histmeta.try_emplace(a_col.attr_name, std::in_place_type<golap::EqHistogram<COL_TYPE>>, obj.var.pruning_param);
+            histptr = &std::any_cast<golap::EqHistogram<COL_TYPE>&>(histmeta[a_col.attr_name]);
+
+            bloommeta.try_emplace(a_col.attr_name, std::in_place_type<golap::BloomMeta<COL_TYPE>>, obj.var.pruning_p, obj.var.pruning_m);
+            bloomptr = &std::any_cast<golap::BloomMeta<COL_TYPE>&>(bloommeta[a_col.attr_name]);
+        }
+
+        util::Log::get().debug_fmt("Compressing col %lu=>%s to disk, algo=%s",col_idx,a_col.attr_name.c_str(),algo.c_str());
+        if constexpr (std::is_same_v<BLOCK_ENV,golap::DecompressEnv>){
+            obj.var.comp_ms += golap::prepare_compressed_device(a_col, num_tuples, compinfos[a_col.attr_name],minmaxptr,histptr,bloomptr);
+        }else{
+            obj.var.comp_ms += golap::prepare_uncompressed(a_col, num_tuples, compinfos[a_col.attr_name],minmaxptr,histptr,bloomptr);
+        }
+
+        // copy metadata to host, so that we can copy it back to device if needed
+        if (usage & golap::MetaFlags::META){
+            std::any_cast<golap::MinMaxMeta<COL_TYPE>&>(minmaxmeta[a_col.attr_name]).to_host();
+            std::any_cast<golap::EqHistogram<COL_TYPE>&>(histmeta[a_col.attr_name]).to_host();
+            std::any_cast<golap::BloomMeta<COL_TYPE>&>(bloommeta[a_col.attr_name]).to_host();
+        }
+        // if this was a column we only used to gather metadata, but we actually wont use it otherwise (e.g. load it from disk),
+        // return here. The next column will overwrite this one on disk
+        if (!(usage & golap::MetaFlags::DATA)){
+            golap::StorageManager::get().set_offset(compinfos[a_col.attr_name].start_offset());
+            compinfos.erase(a_col.attr_name);
+            return;
+        }
+        obj.var.comp_bytes += compinfos[a_col.attr_name].get_comp_bytes();
+        obj.var.uncomp_bytes += compinfos[a_col.attr_name].uncomp_bytes;
+    };
+
+    obj.tables.lineitem.apply(compress_columns_fun);
+
+    uint64_t chunk_num = compinfos["l_returnflag"].blocks.size();
+    uint64_t num_groups = 50;
+    golap::MirrorMem groups(golap::Tag<FLAG_STATUS>{}, num_groups);
+    golap::MirrorMem aggs(golap::Tag<uint64_t>{}, num_groups);
+    golap::MirrorMem other_aggs(golap::Tag<uint64_t>{}, num_groups*8);
+    aggs.dev.set(0);
+    other_aggs.dev.set(0);
+    golap::HashAggregate hash_agg(num_groups, groups.dev.ptr<FLAG_STATUS>(), aggs.dev.ptr<uint64_t>());
+    golap::MirrorMem combined_check{golap::Tag<uint16_t>{}, chunk_num};
+    combined_check.dev.set(0);
+    std::atomic<uint64_t> pruned_bytes{0};
+    std::atomic<uint64_t> pruned_chunks{0};
+    // std::any_cast<golap::MinMaxMeta<SHIPDATE_TYPE>&>(minmaxmeta["l_shipdate"]).to_host();
+
+    std::vector<golap::TableLoader<BLOCK_ENV>> envs;
+    envs.reserve(obj.var.workers);
+
+    util::SliceSeq workslice(compinfos["l_returnflag"].blocks.size(), obj.var.workers);
+    uint64_t startblock,endblock;
+    std::vector<uint64_t> all_blocks_idxs(compinfos["l_returnflag"].blocks.size());
+    std::iota(all_blocks_idxs.begin(), all_blocks_idxs.end(), 0);
+    std::random_shuffle(all_blocks_idxs.begin(),all_blocks_idxs.end());
+
+    for (uint32_t pipeline_idx=0; pipeline_idx<obj.var.workers; ++pipeline_idx){
+        // prepare environment for each thread
+        workslice.get(startblock,endblock);
+        envs.emplace_back(7);
+        envs[pipeline_idx].add("l_returnflag", all_blocks_idxs, startblock, endblock, compinfos["l_returnflag"], nvcomp::TypeOf<uint8_t>());
+        envs[pipeline_idx].add("l_linestatus", all_blocks_idxs, startblock, endblock, compinfos["l_linestatus"], nvcomp::TypeOf<uint8_t>());
+        envs[pipeline_idx].add("l_quantity", all_blocks_idxs, startblock, endblock, compinfos["l_quantity"], nvcomp::TypeOf<QUANTITY_TYPE>());
+        envs[pipeline_idx].add("l_extendedprice", all_blocks_idxs, startblock, endblock, compinfos["l_extendedprice"], nvcomp::TypeOf<uint8_t>());
+        envs[pipeline_idx].add("l_discount", all_blocks_idxs, startblock, endblock, compinfos["l_discount"], nvcomp::TypeOf<uint8_t>());
+        envs[pipeline_idx].add("l_tax", all_blocks_idxs, startblock, endblock, compinfos["l_tax"], nvcomp::TypeOf<uint8_t>());
+        envs[pipeline_idx].add("l_shipdate", all_blocks_idxs, startblock, endblock, compinfos["l_shipdate"], nvcomp::TypeOf<uint8_t>());
+    }
+
+    std::vector<std::thread> threads;
+    threads.reserve(obj.var.workers);
+    auto& meta_stream = envs[1%obj.var.workers].rootstream.stream;
+
+
+    /**
+     * Start timer
+     */
+    uint64_t block_num = std::min((long long)obj.var.block_limit, util::div_ceil(chunk_num,512));
+    util::Timer timer;
+
+    if (obj.var.pruning == "MINMAX"){
+        std::any_cast<golap::MinMaxMeta<SHIPDATE_TYPE>&>(minmaxmeta["l_shipdate"]).to_device(meta_stream);
+        golap::check_mmmeta<<<block_num,512,0,meta_stream>>>(std::any_cast<golap::MinMaxMeta<SHIPDATE_TYPE>&>(minmaxmeta["l_shipdate"]), combined_check.dev.ptr<uint16_t>(), util::Date{0}, date_hi);
+    }else if (obj.var.pruning == "HIST"){
+        std::any_cast<golap::EqHistogram<SHIPDATE_TYPE>&>(histmeta["l_shipdate"]).to_device(meta_stream);
+        golap::check_hist<<<block_num,512,0,meta_stream>>>(std::any_cast<golap::EqHistogram<SHIPDATE_TYPE>&>(histmeta["l_shipdate"]), combined_check.dev.ptr<uint16_t>(), util::Date{0}, date_hi);
+    }
+
+    if (obj.var.pruning != "DONTPRUNE") combined_check.sync_to_host(meta_stream);
+
+    checkCudaErrors(cudaStreamSynchronize(meta_stream));
+    obj.var.prune_ms = timer.elapsed();
+
+    for (uint32_t pipeline_idx=0; pipeline_idx<obj.var.workers; ++pipeline_idx){
+        threads.emplace_back([&,pipeline_idx]{
+
+            cudaSetDevice(obj.var.cuda_device);
+            auto &env = envs[pipeline_idx];
+
+            uint64_t tuples_this_round,global_block_idx;
+            uint64_t round = 0;
+            uint32_t num_blocks;
+
+            // while(env.rootop.step(env.rootstream.stream,env.rootevent.event)){
+            while(round< env.blockenvs.at("l_returnflag").myblocks.size()){
+
+                global_block_idx = env.blockenvs.at("l_returnflag").myblock_idxs[round];
+
+                // check predicate:
+                if (obj.var.pruning != "DONTPRUNE" && combined_check.hst.ptr<uint16_t>()[global_block_idx] == (uint16_t) 0){
+                    util::Log::get().debug_fmt("Thread[%lu, round%lu] would skip the next chunk idx %lu...", pipeline_idx, round, global_block_idx);
+                    env.rootop.skip_step(env.rootstream.stream,env.rootevent.event);
+
+                    pruned_bytes.fetch_add(env.blockenvs.at("l_returnflag").myblocks[round].size
+                                            +env.blockenvs.at("l_linestatus").myblocks[round].size
+                                            +env.blockenvs.at("l_quantity").myblocks[round].size
+                                            +env.blockenvs.at("l_extendedprice").myblocks[round].size
+                                            +env.blockenvs.at("l_discount").myblocks[round].size
+                                            +env.blockenvs.at("l_tax").myblocks[round].size
+                                            +env.blockenvs.at("l_shipdate").myblocks[round].size, std::memory_order_relaxed);
+                    pruned_chunks.fetch_add(1, std::memory_order_relaxed);
+                    round += 1;
+                    continue;
+                }
+
+                if (!env.rootop.step(env.rootstream.stream,env.rootevent.event)){
+                    util::Log::get().error_fmt("Shouldnt happen!");
+                }
+                checkCudaErrors(cudaStreamSynchronize(env.rootstream.stream));
+
+
+                tuples_this_round = env.blockenvs.at("l_returnflag").myblocks[round].tuples;
+                util::Log::get().debug_fmt("Thread[%lu, round%lu] Block %lu, %lu tuples", pipeline_idx, round, global_block_idx, tuples_this_round);
+
+                num_blocks = std::min((long long)obj.var.block_limit, util::div_ceil(tuples_this_round,512));
+
+                pipeline_q11<<<num_blocks,512,0,env.rootstream.stream>>>(hash_agg,
+                                env.blockenvs.at("l_returnflag").decomp_buf.template ptr<RETURNFLAG_TYPE>(),
+                                env.blockenvs.at("l_linestatus").decomp_buf.template ptr<LINESTATUS_TYPE>(),
+                                env.blockenvs.at("l_quantity").decomp_buf.template ptr<QUANTITY_TYPE>(),
+                                env.blockenvs.at("l_extendedprice").decomp_buf.template ptr<EXTENDEDPRICE_TYPE>(),
+                                env.blockenvs.at("l_discount").decomp_buf.template ptr<DISCOUNT_TYPE>(),
+                                env.blockenvs.at("l_tax").decomp_buf.template ptr<TAX_TYPE>(),
+                                env.blockenvs.at("l_shipdate").decomp_buf.template ptr<SHIPDATE_TYPE>(),
+                                date_hi,
+                                other_aggs.dev.ptr<uint64_t>(),
+                                tuples_this_round);
+                pipeline_q12<<<num_blocks,512,0,env.rootstream.stream>>>(hash_agg,
+                                env.blockenvs.at("l_returnflag").decomp_buf.template ptr<RETURNFLAG_TYPE>(),
+                                env.blockenvs.at("l_linestatus").decomp_buf.template ptr<LINESTATUS_TYPE>(),
+                                env.blockenvs.at("l_quantity").decomp_buf.template ptr<QUANTITY_TYPE>(),
+                                env.blockenvs.at("l_extendedprice").decomp_buf.template ptr<EXTENDEDPRICE_TYPE>(),
+                                env.blockenvs.at("l_discount").decomp_buf.template ptr<DISCOUNT_TYPE>(),
+                                env.blockenvs.at("l_tax").decomp_buf.template ptr<TAX_TYPE>(),
+                                env.blockenvs.at("l_shipdate").decomp_buf.template ptr<SHIPDATE_TYPE>(),
+                                date_hi,
+                                other_aggs.dev.ptr<uint64_t>(),
+                                tuples_this_round);
+                pipeline_q13<<<num_blocks,512,0,env.rootstream.stream>>>(hash_agg,
+                                env.blockenvs.at("l_returnflag").decomp_buf.template ptr<RETURNFLAG_TYPE>(),
+                                env.blockenvs.at("l_linestatus").decomp_buf.template ptr<LINESTATUS_TYPE>(),
+                                env.blockenvs.at("l_quantity").decomp_buf.template ptr<QUANTITY_TYPE>(),
+                                env.blockenvs.at("l_extendedprice").decomp_buf.template ptr<EXTENDEDPRICE_TYPE>(),
+                                env.blockenvs.at("l_discount").decomp_buf.template ptr<DISCOUNT_TYPE>(),
+                                env.blockenvs.at("l_tax").decomp_buf.template ptr<TAX_TYPE>(),
+                                env.blockenvs.at("l_shipdate").decomp_buf.template ptr<SHIPDATE_TYPE>(),
+                                date_hi,
+                                other_aggs.dev.ptr<uint64_t>(),
+                                tuples_this_round);
+                pipeline_q14<<<num_blocks,512,0,env.rootstream.stream>>>(hash_agg,
+                                env.blockenvs.at("l_returnflag").decomp_buf.template ptr<RETURNFLAG_TYPE>(),
+                                env.blockenvs.at("l_linestatus").decomp_buf.template ptr<LINESTATUS_TYPE>(),
+                                env.blockenvs.at("l_quantity").decomp_buf.template ptr<QUANTITY_TYPE>(),
+                                env.blockenvs.at("l_extendedprice").decomp_buf.template ptr<EXTENDEDPRICE_TYPE>(),
+                                env.blockenvs.at("l_discount").decomp_buf.template ptr<DISCOUNT_TYPE>(),
+                                env.blockenvs.at("l_tax").decomp_buf.template ptr<TAX_TYPE>(),
+                                env.blockenvs.at("l_shipdate").decomp_buf.template ptr<SHIPDATE_TYPE>(),
+                                date_hi,
+                                other_aggs.dev.ptr<uint64_t>(),
+                                tuples_this_round);
+
+                checkCudaErrors(cudaEventRecord(env.rootevent.event, env.rootstream.stream));
+                round += 1;
+
+            } // end of while
+            checkCudaErrors(cudaStreamSynchronize(env.rootstream.stream));
+        });
+    }
+
+    for(auto &thread: threads) thread.join();
+    aggs.sync_to_host(envs[0].rootstream.stream);
+    other_aggs.sync_to_host(envs[0].rootstream.stream);
+    groups.sync_to_host(envs[0].rootstream.stream);
+    checkCudaErrors(cudaStreamSynchronize(envs[0].rootstream.stream));
+
+    obj.var.time_ms = timer.elapsed();
+    /**
+     * Stopped timer
+     */
+
+    golap::HostMem pop_group_slot{golap::Tag<uint32_t>{}, num_groups};
+    checkCudaErrors(cudaMemcpy(pop_group_slot.ptr<uint32_t>(), hash_agg.wrote_group, num_groups*sizeof(uint32_t), cudaMemcpyDefault));
+
+    obj.var.device_mem_used = golap::DEVICE_ALLOCATED.load();
+    obj.var.host_mem_used = golap::HOST_ALLOCATED.load();
+    obj.var.pruned_bytes = pruned_bytes.load();
+
+    util::Log::get().info_fmt("Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order");
+    for(uint32_t i = 0; i<num_groups; ++i){
+        if (pop_group_slot.ptr<uint32_t>()[i] == 0) continue;
+
+        auto& group = groups.hst.ptr<FLAG_STATUS>()[i];
+
+        auto count = other_aggs.hst.ptr<uint64_t>()[i*8+5];
+
+        std::cout << "# " << group.l_returnflag << ", " << group.l_linestatus << ", " <<
+                                    aggs.hst.ptr<uint64_t>()[i] << ", " <<
+                                    other_aggs.hst.ptr<uint64_t>()[i*8+0] << ", " <<
+                                    other_aggs.hst.ptr<uint64_t>()[i*8+1] << ", " <<
+                                    other_aggs.hst.ptr<uint64_t>()[i*8+2] << ", " <<
+                                    util::Decimal64{uint64_t(100*aggs.hst.ptr<uint64_t>()[i] / count)} << ", " <<
+                                    util::Decimal64{uint64_t(other_aggs.hst.ptr<uint64_t>()[i*8+3] / count)} << ", " <<
+                                    util::Decimal64{uint64_t(other_aggs.hst.ptr<uint64_t>()[i*8+4] / count)} << ", " << count << "\n";
+    }
+
+    util::Log::get().info_fmt("Pruned: %lu of %lu chunks (%.2f), %lu of %lu bytes (%.2f)",
+                                pruned_chunks.load(),chunk_num,(double)pruned_chunks.load()/chunk_num,
+                                pruned_bytes.load(),obj.var.comp_bytes,(double)pruned_bytes.load()/obj.var.comp_bytes);
+
+    return true;
+
+}
+
+bool TPCHColLayout::query1(){
+    util::Date date_hi;
+    date_hi.t = 904694400;
+    // date_hi = 1998-09-02
+
+     if(var.comp_algo == "UNCOMPRESSED") return query1gen<golap::LoadEnv>(*this, date_hi);
+     else return query1gen<golap::DecompressEnv>(*this, date_hi);
+}

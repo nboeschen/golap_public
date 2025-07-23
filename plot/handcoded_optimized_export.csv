@@ -1,0 +1,13 @@
+strategy,sockets,bw
+Compressed SSD,1, 11.866
+Uncompressed SSD,1, 17.801
+InMemory,1, 38.153
+Compressed SSD,2, 22.362
+Uncompressed SSD,2, 16.752
+InMemory,2, 74.512
+Compressed SSD,3, 27.497
+Uncompressed SSD,3, 18.545
+InMemory,3, 113.628
+Compressed SSD,4, 26.381
+Uncompressed SSD,4, 17.398
+InMemory,4, 148.643

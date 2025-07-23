@@ -1,0 +1,132 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:87:00.0
+# Slurm Info: 32257 32 1 gres:gpu:1
+# ../../../bin/taxi --dataflow=INMEM --chunk_bytes=0 --comp_algo=- --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query1.1,query1.2,query1.3,query2.1,query2.2,query2.3 --repeat=2 --scale_factor=60 --ssdpath=/raid/gds/300G.file --dbpath=/mnt/labstore/nboeschen/taxi/trips.csv.dat --store_offset=0 --workers=32
+#[INFO ] Loading table data from disk ...
+#[INFO ] Month: 1, Sum: 43298722
+#[INFO ] Month: 2, Sum: 42115836
+#[INFO ] Month: 3, Sum: 45703492
+#[INFO ] Month: 4, Sum: 44439573
+#[INFO ] Month: 5, Sum: 44201781
+#[INFO ] Month: 6, Sum: 41606747
+#[INFO ] Month: 7, Sum: 38015912
+#[INFO ] Month: 8, Sum: 36911184
+#[INFO ] Month: 9, Sum: 38263812
+#[INFO ] Month: 10, Sum: 41897053
+#[INFO ] Month: 11, Sum: 39257983
+#[INFO ] Month: 12, Sum: 39983601
+query1.1,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,274.1,,,,
+#[INFO ] Month: 1, Sum: 5287565
+#[INFO ] Month: 2, Sum: 5276617
+#[INFO ] Month: 3, Sum: 6035374
+#[INFO ] Month: 4, Sum: 5979853
+#[INFO ] Month: 5, Sum: 6192833
+#[INFO ] Month: 6, Sum: 5788621
+#[INFO ] Month: 7, Sum: 5280653
+#[INFO ] Month: 8, Sum: 5183853
+#[INFO ] Month: 9, Sum: 5255148
+#[INFO ] Month: 10, Sum: 5634130
+#[INFO ] Month: 11, Sum: 5171902
+#[INFO ] Month: 12, Sum: 5248852
+query1.2,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,241.299,,,,
+#[INFO ] Month: 1, Sum: 1315068
+#[INFO ] Month: 2, Sum: 1224015
+#[INFO ] Month: 3, Sum: 1496423
+#[INFO ] Month: 4, Sum: 1497112
+#[INFO ] Month: 5, Sum: 1617748
+#[INFO ] Month: 6, Sum: 1495086
+#[INFO ] Month: 7, Sum: 1389871
+#[INFO ] Month: 8, Sum: 1400004
+#[INFO ] Month: 9, Sum: 1457994
+#[INFO ] Month: 10, Sum: 1534507
+#[INFO ] Month: 11, Sum: 1369789
+#[INFO ] Month: 12, Sum: 1345319
+query1.3,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,166.902,,,,
+#[INFO ] day: 0, SUM: 878.27, COUNT: 20211, Avg: 156.44
+#[INFO ] day: 1, SUM: 718.84, COUNT: 16191, Avg: 159.83
+#[INFO ] day: 2, SUM: 824.60, COUNT: 16544, Avg: 179.44
+#[INFO ] day: 3, SUM: 685.22, COUNT: 17409, Avg: 141.70
+#[INFO ] day: 4, SUM: 798.73, COUNT: 19264, Avg: 149.26
+#[INFO ] day: 5, SUM: 1407.74, COUNT: 20428, Avg: 248.08
+#[INFO ] day: 6, SUM: 1737.68, COUNT: 19439, Avg: 321.81
+query2.1,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,239.632,,,,
+#[INFO ] day: 0, SUM: 708219.53, COUNT: 42564959, Avg: 59.90
+#[INFO ] day: 1, SUM: 488731.11, COUNT: 42406421, Avg: 41.49
+#[INFO ] day: 2, SUM: 421698.24, COUNT: 44688419, Avg: 33.97
+#[INFO ] day: 3, SUM: 1235676.57, COUNT: 45435088, Avg: 97.91
+#[INFO ] day: 4, SUM: 605175.45, COUNT: 46088145, Avg: 47.27
+#[INFO ] day: 5, SUM: 405270.24, COUNT: 47530293, Avg: 30.70
+#[INFO ] day: 6, SUM: 1187051.65, COUNT: 48475348, Avg: 88.16
+query2.2,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,485.516,,,,
+#[INFO ] day: 0, SUM: 286975.66, COUNT: 34780283, Avg: 29.70
+#[INFO ] day: 1, SUM: 277467.98, COUNT: 34194473, Avg: 29.21
+#[INFO ] day: 2, SUM: 246930.87, COUNT: 38815198, Avg: 22.90
+#[INFO ] day: 3, SUM: 250548.04, COUNT: 41306246, Avg: 21.84
+#[INFO ] day: 4, SUM: 281484.14, COUNT: 43325923, Avg: 23.39
+#[INFO ] day: 5, SUM: 311874.04, COUNT: 43036483, Avg: 26.09
+#[INFO ] day: 6, SUM: 240767.58, COUNT: 40282218, Avg: 21.52
+query2.3,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,487.441,,,,
+#[INFO ] Month: 1, Sum: 43298722
+#[INFO ] Month: 2, Sum: 42115836
+#[INFO ] Month: 3, Sum: 45703492
+#[INFO ] Month: 4, Sum: 44439573
+#[INFO ] Month: 5, Sum: 44201781
+#[INFO ] Month: 6, Sum: 41606747
+#[INFO ] Month: 7, Sum: 38015912
+#[INFO ] Month: 8, Sum: 36911184
+#[INFO ] Month: 9, Sum: 38263812
+#[INFO ] Month: 10, Sum: 41897053
+#[INFO ] Month: 11, Sum: 39257983
+#[INFO ] Month: 12, Sum: 39983601
+query1.1,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,274.666,,,,
+#[INFO ] Month: 1, Sum: 5287565
+#[INFO ] Month: 2, Sum: 5276617
+#[INFO ] Month: 3, Sum: 6035374
+#[INFO ] Month: 4, Sum: 5979853
+#[INFO ] Month: 5, Sum: 6192833
+#[INFO ] Month: 6, Sum: 5788621
+#[INFO ] Month: 7, Sum: 5280653
+#[INFO ] Month: 8, Sum: 5183853
+#[INFO ] Month: 9, Sum: 5255148
+#[INFO ] Month: 10, Sum: 5634130
+#[INFO ] Month: 11, Sum: 5171902
+#[INFO ] Month: 12, Sum: 5248852
+query1.2,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,240.292,,,,
+#[INFO ] Month: 1, Sum: 1315068
+#[INFO ] Month: 2, Sum: 1224015
+#[INFO ] Month: 3, Sum: 1496423
+#[INFO ] Month: 4, Sum: 1497112
+#[INFO ] Month: 5, Sum: 1617748
+#[INFO ] Month: 6, Sum: 1495086
+#[INFO ] Month: 7, Sum: 1389871
+#[INFO ] Month: 8, Sum: 1400004
+#[INFO ] Month: 9, Sum: 1457994
+#[INFO ] Month: 10, Sum: 1534507
+#[INFO ] Month: 11, Sum: 1369789
+#[INFO ] Month: 12, Sum: 1345319
+query1.3,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,9250259104,0,-1,0,-1,169.197,,,,
+#[INFO ] day: 0, SUM: 878.27, COUNT: 20211, Avg: 156.44
+#[INFO ] day: 1, SUM: 718.84, COUNT: 16191, Avg: 159.83
+#[INFO ] day: 2, SUM: 824.60, COUNT: 16544, Avg: 179.44
+#[INFO ] day: 3, SUM: 685.22, COUNT: 17409, Avg: 141.70
+#[INFO ] day: 4, SUM: 798.73, COUNT: 19264, Avg: 149.26
+#[INFO ] day: 5, SUM: 1407.74, COUNT: 20428, Avg: 248.08
+#[INFO ] day: 6, SUM: 1737.68, COUNT: 19439, Avg: 321.81
+query2.1,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,241.347,,,,
+#[INFO ] day: 0, SUM: 708219.53, COUNT: 42564959, Avg: 59.90
+#[INFO ] day: 1, SUM: 488731.11, COUNT: 42406421, Avg: 41.49
+#[INFO ] day: 2, SUM: 421698.24, COUNT: 44688419, Avg: 33.97
+#[INFO ] day: 3, SUM: 1235676.57, COUNT: 45435088, Avg: 97.91
+#[INFO ] day: 4, SUM: 605175.45, COUNT: 46088145, Avg: 47.27
+#[INFO ] day: 5, SUM: 405270.24, COUNT: 47530293, Avg: 30.70
+#[INFO ] day: 6, SUM: 1187051.65, COUNT: 48475348, Avg: 88.16
+query2.2,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,488.048,,,,
+#[INFO ] day: 0, SUM: 286975.66, COUNT: 34780283, Avg: 29.70
+#[INFO ] day: 1, SUM: 277467.98, COUNT: 34194473, Avg: 29.21
+#[INFO ] day: 2, SUM: 246930.87, COUNT: 38815198, Avg: 22.90
+#[INFO ] day: 3, SUM: 250548.04, COUNT: 41306246, Avg: 21.84
+#[INFO ] day: 4, SUM: 281484.14, COUNT: 43325923, Avg: 23.39
+#[INFO ] day: 5, SUM: 311874.04, COUNT: 43036483, Avg: 26.09
+#[INFO ] day: 6, SUM: 240767.58, COUNT: 40282218, Avg: 21.52
+query2.3,INMEM,60,,32,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,0,0,0,18500518208,0,-1,0,-1,486.221,,,,
+#DONE

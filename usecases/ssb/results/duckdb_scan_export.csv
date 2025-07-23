@@ -1,0 +1,90 @@
+query,scale_factor,drop_cache,row_group_size,comp_algo,mem_limit,thread_limit,uncomp_bytes,comp_bytes,io_bytes,time_ms
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/snappy/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,1050624,SNAPPY,274877906944,64,0,910077674,1804058624,718.498
+#[INFO ] Res size 1
+scan_only,100,1,1050624,SNAPPY,274877906944,64,0,910077688,1804058624,625.014
+#[INFO ] Res size 1
+scan_only,100,1,1050624,SNAPPY,274877906944,64,0,910077692,1804058624,628.758
+#[INFO ] Res size 1
+scan_only,100,1,1050624,SNAPPY,274877906944,64,0,910077692,1804058624,663.348
+#[INFO ] Res size 1
+scan_only,100,1,1050624,SNAPPY,274877906944,64,0,910077694,1804058624,643.071
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/uncompressed/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,1050624,UNCOMPRESSED,274877906944,64,0,4800153718,7203315712,1311.65
+#[INFO ] Res size 1
+scan_only,100,1,1050624,UNCOMPRESSED,274877906944,64,0,4800153734,7203315712,1334.05
+#[INFO ] Res size 1
+scan_only,100,1,1050624,UNCOMPRESSED,274877906944,64,0,4800153738,7203315712,1342.81
+#[INFO ] Res size 1
+scan_only,100,1,1050624,UNCOMPRESSED,274877906944,64,0,4800153740,7203315712,1332.42
+#[INFO ] Res size 1
+scan_only,100,1,1050624,UNCOMPRESSED,274877906944,64,0,4800153742,7203315712,1328.94
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/snappy_61440/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,63488,SNAPPY,274877906944,64,0,911582341,2546810880,505.814
+#[INFO ] Res size 1
+scan_only,100,1,63488,SNAPPY,274877906944,64,0,911582357,2546810880,488.217
+#[INFO ] Res size 1
+scan_only,100,1,63488,SNAPPY,274877906944,64,0,911582359,2546810880,460.837
+#[INFO ] Res size 1
+scan_only,100,1,63488,SNAPPY,274877906944,64,0,911582359,2546810880,469.453
+#[INFO ] Res size 1
+scan_only,100,1,63488,SNAPPY,274877906944,64,0,911582363,2546810880,469.594
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/uncompressed_61440/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,63488,UNCOMPRESSED,274877906944,64,0,4800426551,9999503360,2003.27
+#[INFO ] Res size 1
+scan_only,100,1,63488,UNCOMPRESSED,274877906944,64,0,4800426571,9999503360,1939.34
+#[INFO ] Res size 1
+scan_only,100,1,63488,UNCOMPRESSED,274877906944,64,0,4800426571,9999503360,2002.81
+#[INFO ] Res size 1
+scan_only,100,1,63488,UNCOMPRESSED,274877906944,64,0,4800426573,9999503360,1990.34
+#[INFO ] Res size 1
+scan_only,100,1,63488,UNCOMPRESSED,274877906944,64,0,4800426575,9999503360,1917.91
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/snappy_122880/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,124928,SNAPPY,274877906944,64,0,910866405,2548432896,491.481
+#[INFO ] Res size 1
+scan_only,100,1,124928,SNAPPY,274877906944,64,0,910866421,2548432896,473.015
+#[INFO ] Res size 1
+scan_only,100,1,124928,SNAPPY,274877906944,64,0,910866423,2548432896,488.948
+#[INFO ] Res size 1
+scan_only,100,1,124928,SNAPPY,274877906944,64,0,910866423,2548432896,471.424
+#[INFO ] Res size 1
+scan_only,100,1,124928,SNAPPY,274877906944,64,0,910866427,2548432896,480.653
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/uncompressed_122880/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,124928,UNCOMPRESSED,274877906944,64,0,4800282254,15155879936,2641.17
+#[INFO ] Res size 1
+scan_only,100,1,124928,UNCOMPRESSED,274877906944,64,0,4800282274,15155879936,2711.75
+#[INFO ] Res size 1
+scan_only,100,1,124928,UNCOMPRESSED,274877906944,64,0,4800282274,15155879936,2701.49
+#[INFO ] Res size 1
+scan_only,100,1,124928,UNCOMPRESSED,274877906944,64,0,4800282276,15155879936,2641.95
+#[INFO ] Res size 1
+scan_only,100,1,124928,UNCOMPRESSED,274877906944,64,0,4800282278,15155879936,2659.84
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/snappy_524288/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,526336,SNAPPY,274877906944,64,0,909984666,3583873024,855.947
+#[INFO ] Res size 1
+scan_only,100,1,526336,SNAPPY,274877906944,64,0,909984684,3583873024,634.956
+#[INFO ] Res size 1
+scan_only,100,1,526336,SNAPPY,274877906944,64,0,909984686,3583873024,648.551
+#[INFO ] Res size 1
+scan_only,100,1,526336,SNAPPY,274877906944,64,0,909984688,3583873024,653.739
+#[INFO ] Res size 1
+scan_only,100,1,526336,SNAPPY,274877906944,64,0,909984692,3583873024,634.937
+# ../../../bin/duckdb_ssb --repeat=5 --dbpath=/raid/gds/ssb/parquet100/uncompressed_524288/ --query=scan_only --mem_limit=274877906944 --thread_limit=64 --explain_analyze=false
+#[INFO ] Res size 1
+scan_only,100,1,526336,UNCOMPRESSED,274877906944,64,0,4800171285,10786852864,1996.61
+#[INFO ] Res size 1
+scan_only,100,1,526336,UNCOMPRESSED,274877906944,64,0,4800171307,10786852864,1990.73
+#[INFO ] Res size 1
+scan_only,100,1,526336,UNCOMPRESSED,274877906944,64,0,4800171307,10786852864,2033.68
+#[INFO ] Res size 1
+scan_only,100,1,526336,UNCOMPRESSED,274877906944,64,0,4800171309,10786852864,2085.77
+#[INFO ] Res size 1
+scan_only,100,1,526336,UNCOMPRESSED,274877906944,64,0,4800171313,10786852864,2107.97
+#DONE

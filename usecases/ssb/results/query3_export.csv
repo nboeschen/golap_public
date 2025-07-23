@@ -1,0 +1,869 @@
+query,dataflow,scale_factor,customer_factor,workers,extra_workers,add_cpu_threads,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:47:00.0
+# Slurm Info: 24413 32 1 gres:gpu:gpu_group1:1
+# ../bin/ssb --dataflow=SSD2GPU2CPU --chunk_bytes=16777216,33554432,67108864 --comp_algo=BEST_BW_COMP,UNCOMPRESSED --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query3.1,query3.2,query3.3,query3.4 --repeat=2 --scale_factor=200 --ssdpath=/raid/gds/100G.file --dbpath=/mnt/labstore/nboeschen/ssb/diskdb200.dat --store_offset=0 --workers=8 --extra_workers=4 --add_cpu_threads=32 --customer_factor=1,25 --max_gpu_um_memory=0
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607207424	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58605568	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665812992,33936429884,0,-1,4048.52,469.573,9.591173,459.849151,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619806720	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58580992	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678387712,33936429884,0,-1,3787.01,456.244,7.981736,448.124946,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648187904	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78090240	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726278144,33936429884,0,-1,3798.67,462.358,9.895300,452.326033,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4309.68,1694.66,22.313879,1672.194260,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4269.53,1700.05,22.068695,1677.831114,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4088.87,1690.23,30.581737,1659.488215,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607207424	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58605568	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665812992,33936429884,0,-1,3816.28,1505.95,8.569258,1497.236649,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619806720	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58580992	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678387712,33936429884,0,-1,3824.87,1278.05,8.221190,1269.686776,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648187904	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78090240	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726278144,33936429884,0,-1,3703.72,989.18,10.505356,978.545502,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4191.16,1875.18,22.807924,1852.223133,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4305.79,1761.29,22.135862,1739.004286,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4010.24,1883.21,29.868806,1853.186979,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607207424	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58605568	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665812992,33936429884,0,-1,3803.76,468.066,8.481412,459.449111,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619806720	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58580992	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678387712,33936429884,0,-1,3699.4,457.455,7.430111,449.891390,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648187904	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78090240	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726278144,33936429884,0,-1,3607.61,455.069,9.696183,445.238278,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4239.79,1695.18,24.826087,1670.199902,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4087.99,1801.52,30.107769,1771.255594,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4084.06,1679.71,30.132426,1649.428084,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607207424	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58605568	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665812992,33936429884,0,-1,3815.08,469.781,9.690944,459.950220,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619806720	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58580992	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678387712,33936429884,0,-1,3697.09,458.997,7.688541,451.165883,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648187904	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78090240	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726278144,33936429884,0,-1,3623.87,459.981,10.490327,449.347059,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4077.02,1694.69,22.659583,1671.867940,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4207.65,1673.59,24.062921,1649.370785,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4078.84,1689.56,33.307168,1656.082946,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8775970816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406955520	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10182926336,42000429884,0,-1,8080.46,609.178,146.183598,462.854710,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788828160	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406517248	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195345408,42000429884,0,-1,6684,578.075,111.682979,466.254359,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817803264	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406107648	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10223910912,42000429884,0,-1,5642.79,565.904,97.652838,468.107409,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,4947.25,2126.51,452.806370,1673.552982,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4739.82,2111.68,458.870014,1652.661908,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149452518433851
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4855.5,2110.98,450.164467,1660.665014,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8775970816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406955520	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10182926336,42000429884,0,-1,8171.66,1622.28,144.766313,1477.369152,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788828160	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406517248	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195345408,42000429884,0,-1,6547.16,1274.35,108.302516,1165.905581,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817803264	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406107648	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10223910912,42000429884,0,-1,5695.88,997.521,93.939195,903.436008,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,4967.56,2375.47,445.455839,1929.866968,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4788.81,2182.85,445.041155,1737.658558,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6000378155020
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4917.27,2171.94,447.182229,1724.601198,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8775970816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406955520	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10182926336,42000429884,0,-1,8151.28,607.52,142.546309,464.822166,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788828160	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406517248	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195345408,42000429884,0,-1,6553.86,575.666,106.747933,468.778769,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817803264	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406107648	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10223910912,42000429884,0,-1,5528.38,547.375,92.001866,455.229219,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,5104.77,2112.91,443.042068,1669.710685,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4880.1,2096.63,444.676633,1651.804845,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =236633849110
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,5063.03,2096.78,438.086002,1658.508941,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8775970816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406955520	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10182926336,42000429884,0,-1,8171.37,622.656,151.034485,471.480336,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788828160	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406517248	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195345408,42000429884,0,-1,6489.63,566.764,107.128954,459.501089,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817803264	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406107648	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10223910912,42000429884,0,-1,5480.21,551.12,92.055138,458.925339,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,5085.59,2125.18,449.998302,1675.020441,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,5083.96,2095.21,445.307358,1649.746647,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3381783128
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4952.08,2096.18,443.230885,1652.789901,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607203328	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58613760	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665817088,33936429884,0,-1,3884.52,464.572,9.370767,455.065308,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619810816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58593280	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678404096,33936429884,0,-1,3747.95,460.342,9.247874,450.932020,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648183808	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78102528	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726286336,33936429884,0,-1,3634.16,465.516,11.094671,454.286414,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4302.88,1690.77,23.223812,1667.388678,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4194.74,1771.68,21.128133,1750.395528,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149243387203778
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4135.55,1688.94,31.305998,1657.489802,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607203328	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58613760	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665817088,33936429884,0,-1,3816.22,1429.74,9.406885,1420.184242,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619810816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58593280	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678404096,33936429884,0,-1,3766.09,1199.84,8.163179,1191.547113,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648183808	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78102528	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726286336,33936429884,0,-1,3560.12,939.448,9.636129,929.677114,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4115.17,1893.71,23.800774,1869.755808,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4491.67,1759.05,22.955905,1735.934963,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6002724302527
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4254.07,1758.22,31.675519,1726.390487,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607203328	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58613760	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665817088,33936429884,0,-1,3810.89,467.503,8.679487,458.686317,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619810816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58593280	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678404096,33936429884,0,-1,3723.15,471.127,7.764174,463.227085,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648183808	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78102528	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726286336,33936429884,0,-1,3626.07,494.446,11.563169,482.761160,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4279.76,1729.74,21.398415,1708.196321,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4413.14,1707.79,22.259716,1685.367667,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =239242754190
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4196.95,1688.01,31.236306,1656.616497,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8607203328	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58613760	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,12274169400,154185999208,8665817088,33936429884,0,-1,3812.46,463.541,8.926496,454.483937,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8619810816	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 58593280	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,13859616312,154185999208,8678404096,33936429884,0,-1,3758.86,459.872,8.236949,451.497491,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8648183808	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 78102528	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,17030510136,154185999208,8726286336,33936429884,0,-1,3627.78,462.65,10.872972,451.641975,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1165582392,154185999208,33999028224,33936429884,0,-1,4158.99,1702.51,26.421979,1675.930394,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 352321536	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,1870225464,154185999208,34057748480,33936429884,0,-1,4314.95,1672.36,22.684691,1649.522542,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 469762048	(6000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3352019966
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,1,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,3279511608,154185999208,34292629504,33936429884,0,-1,4193.37,1689.6,30.309301,1659.131880,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8776007680	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1407086592	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10183094272,42000429884,0,-1,8081.98,622.366,146.549110,475.682814,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788869120	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406656512	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195525632,42000429884,0,-1,6781.01,572.14,110.404878,461.591498,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817815552	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406242816	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10224058368,42000429884,0,-1,5621.74,560.906,96.484265,464.279929,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,4953.41,2122.61,453.260300,1669.180191,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4841.63,2103.11,450.818515,1652.152683,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =149383921998931
+#[INFO ] Number of results (groups)=150
+query3.1,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4933.74,2110.18,450.406024,1659.624534,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8776007680	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1407086592	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10183094272,42000429884,0,-1,8175.84,1590.82,143.098886,1447.584355,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788869120	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406656512	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195525632,42000429884,0,-1,6608.86,1364.11,109.147537,1254.818679,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817815552	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406242816	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10224058368,42000429884,0,-1,5628.97,1067.92,92.063312,975.720472,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,5041.02,2345.51,444.406071,1900.959342,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4834.8,2180.36,442.136563,1738.068594,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =6004276186099
+#[INFO ] Number of results (groups)=600
+query3.2,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4981.84,2215.83,439.409108,1776.273747,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8776007680	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1407086592	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10183094272,42000429884,0,-1,8240.52,603.033,140.312959,462.586703,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788869120	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406656512	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195525632,42000429884,0,-1,6579.05,573.102,107.380791,465.578208,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817815552	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406242816	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10224058368,42000429884,0,-1,5698.68,550.021,91.860108,458.020535,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,4993.67,2106.89,439.575363,1667.165816,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,4887.9,2088.4,441.043363,1647.209823,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =237802250925
+#[INFO ] Number of results (groups)=24
+query3.3,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4912.91,2090.93,440.657442,1650.126707,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 8776007680	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1407086592	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,22642169400,176073999208,10183094272,42000429884,0,-1,8171.97,611.239,142.995610,468.109833,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 8788869120	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406656512	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,24227616312,176073999208,10195525632,42000429884,0,-1,6602.06,568.144,108.803887,459.198476,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 8817815552	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 1406242816	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,42505273344,27398510136,176073999208,10224058368,42000429884,0,-1,5560.13,548.125,92.983846,454.999304,,
+#[INFO ] lo_tuples_per_chunk=2097152
+#[INFO ] cust_tuples_per_chunk=1048576
+#[INFO ] Lineorder columns bytes: 33646706688	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,11533582392,176073999208,42102423552,42000429884,0,-1,4988.32,2110.66,441.186825,1669.320636,,
+#[INFO ] lo_tuples_per_chunk=4194304
+#[INFO ] cust_tuples_per_chunk=2097152
+#[INFO ] Lineorder columns bytes: 33705426944	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,12238225464,176073999208,42161143808,42000429884,0,-1,5080.44,2088.35,439.529757,1648.671611,,
+#[INFO ] lo_tuples_per_chunk=8388608
+#[INFO ] cust_tuples_per_chunk=4194304
+#[INFO ] Lineorder columns bytes: 33822867456	(1200015353 tuples)
+#[INFO ] Customer  columns bytes: 8455716864	(150000000 tuples)
+#[INFO ] Supplier  columns bytes: 22409216	(400000 tuples)
+#[INFO ] Date      columns bytes: 49152		(2555 tuples)
+#[INFO ] Sum of results            =3340648757
+#[INFO ] Number of results (groups)=4
+query3.4,SSD2GPU2CPU,200,25,8,4,32,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,42505273344,13647511608,176073999208,42278584320,42000429884,0,-1,4861.35,2187.05,440.514572,1746.395014,,
+#DONE

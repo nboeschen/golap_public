@@ -1,0 +1,223 @@
+query,dataflow,scale_factor,customer_factor,workers,extra_workers,add_cpu_threads,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:47:00.0
+# Slurm Info: 28743 32 1 gres:gpu:gpu_group1:1
+# ../../../bin/ssb --dataflow=INMEM --chunk_bytes=0 --comp_algo=- --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query1.1,query1.2,query1.3,query2.1,query2.2,query2.3,query3.1,query3.2,query3.3,query3.4,query4.1,query4.2,query4.3 --repeat=2 --scale_factor=200 --ssdpath=/raid/gds/100G.file --dbpath=/mnt/labstore/nboeschen/ssb/diskdb200.dat --store_offset=0 --workers=8,16,32
+#[INFO ] Loading table data from disk ...
+#[INFO ] Prejoining tables for metadata ...
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,1422.22,,,,
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,1113.93,,,,
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,609.484,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,927.809,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,638.685,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,409.31,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,1190.51,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,651.702,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,16800214942,0,-1,0,-1,470.62,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,4585.19,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,2736.86,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,1517.04,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,1807.82,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,1261.95,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,2232.99,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,3082.63,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,1755.07,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,0,0,33600429884,0,-1,0,-1,632.002,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,6755.93,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,7416.22,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2676.39,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4981.07,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2678.37,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2651.69,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,5282.71,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,3620.41,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2544.32,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,6373.22,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4477.92,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2062.26,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,7796.46,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,6239.5,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,3196.43,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,10272.7,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,3828.38,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,4728.75,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,6302.25,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,5079.85,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,4440.27,,,,
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,1421.02,,,,
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,539.248,,,,
+#[INFO ] The result is: 84148405063199
+query1.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,431.364,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,916.148,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,662.032,,,,
+#[INFO ] The result is: 18167977739771
+query1.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,481.069,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,942.665,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,607.718,,,,
+#[INFO ] The result is: 4936900771232
+query1.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,16800214942,0,-1,0,-1,568.486,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,4654.52,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,3310.14,,,,
+#[INFO ] Sum of results            =34701243286598
+#[INFO ] Number of results (groups)=280
+query2.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,1747.79,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,1860.13,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,1250.61,,,,
+#[INFO ] Sum of results            =6850758987717
+#[INFO ] Number of results (groups)=56
+query2.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,1645.22,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,2073.69,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,1537.75,,,,
+#[INFO ] Sum of results            =925114773972
+#[INFO ] Number of results (groups)=7
+query2.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,33600429884,0,-1,0,-1,638.735,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,7036.47,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4243.07,,,,
+#[INFO ] Sum of results            =149723353967039
+#[INFO ] Number of results (groups)=150
+query3.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4051.31,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,6312.97,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4395.68,,,,
+#[INFO ] Sum of results            =5989792312080
+#[INFO ] Number of results (groups)=600
+query3.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2501.5,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4882.38,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,2449.92,,,,
+#[INFO ] Sum of results            =237890592976
+#[INFO ] Number of results (groups)=24
+query3.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,3198.02,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,4129.65,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,3236.92,,,,
+#[INFO ] Sum of results            =3368697546
+#[INFO ] Number of results (groups)=4
+query3.4,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387010624,0,33936429884,0,-1,0,-1,3201.99,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,8887.96,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,5131.31,,,,
+#[INFO ] Sum of results            =67818022284047
+#[INFO ] Number of results (groups)=35
+query4.1,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387001424,0,48000614120,0,-1,0,-1,3260.06,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,6526.78,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,6720.68,,,,
+#[INFO ] Sum of results            =19326045586521
+#[INFO ] Number of results (groups)=100
+query4.2,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387009424,0,48000614120,0,-1,0,-1,4017.49,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,8,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,5697.67,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,16,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,3252.7,,,,
+#[INFO ] Sum of results            =390631743549
+#[INFO ] Number of results (groups)=800
+query4.3,INMEM,200,1,32,1,1,0,65536,-,natural,0,DONTPRUNE,16,0.01,8192,42298834944,0,233387017424,0,48000614120,0,-1,0,-1,3390.03,,,,
+#DONE

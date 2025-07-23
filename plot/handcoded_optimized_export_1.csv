@@ -1,0 +1,23 @@
+# loading csv format
+# sorting lineorder table
+# Written Size 1919561728
+# Some(BatchInfo { offset: 0, size: 2097152, size_with_padding: 2097152, min_disc: 0.0, max_disc: 0.0, min_quantity: 1 })
+# Written Size 588173312
+# Some(BatchInfo { offset: 42949672960, size: 617206, size_with_padding: 618496, min_disc: 0.0, max_disc: 0.0, min_quantity: 1 })
+# number of records 59986214
+strategy,compress,prune,time_ms,bw
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,true,52.42,34.10
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,true,false,133.40,13.40
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,true,34.98,51.11
+# Press enter to start measurement SSD
+# Result parallel 4468236714181
+SSD,false,false,231.15,7.73
+# Press enter to start measurement in-memory measurement
+# IN-MEMORY result parallel 4468236714181
+InMemory,false,false,41.04,43.56

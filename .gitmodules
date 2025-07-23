@@ -1,0 +1,21 @@
+[submodule "Catch2"]
+	path = third_party/Catch2
+	url = https://github.com/catchorg/Catch2/
+[submodule "nvcomp"]
+	path = third_party/nvcomp
+	url = https://github.com/NVIDIA/nvcomp
+[submodule "lz4"]
+	path = third_party/lz4
+	url = https://github.com/lz4/lz4
+[submodule "gflags"]
+	path = third_party/gflags
+	url = https://github.com/gflags/gflags
+[submodule "third_party/concurrentqueue"]
+	path = third_party/concurrentqueue
+	url = https://github.com/cameron314/concurrentqueue
+[submodule "third_party/snappy"]
+	path = third_party/snappy
+	url = https://github.com/google/snappy
+[submodule "third_party/perfevent"]
+	path = third_party/perfevent
+	url = https://github.com/viktorleis/perfevent/

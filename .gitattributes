@@ -1,0 +1,28 @@
+# Specify filepatterns you want to assign special attributes.
+
+third_party/ export-ignore
+**/lsync.conf export-ignore
+**/lsync_aws.conf export-ignore
+scripts/find_result_files.sh export-ignore
+scripts/find_name.sh export-ignore
+run_systemx.sh export-ignore
+systemx/ export-ignore
+systemx_export.csv export-ignore
+slides/ export-ignore
+poster/ export-ignore
+res/ export-ignore
+core/plan/ export-ignore
+plot/aws/ export-ignore
+scripts/install_aws.sh export-ignore
+scripts/run_warp.sh export-ignore
+usecases/consumer/ export-ignore
+usecases/ssb_orig/ export-ignore
+usecases/imdb/ export-ignore
+usecases/comp_bench/ export-ignore
+usecases/misc_bench/ export-ignore
+usecases/storage_bench/ export-ignore
+usecases/ssb/plot/chunksize_new.py export-ignore
+usecases/ssb/plot/chunksize_workers_aws.py export-ignore
+usecases/ssb/plot/comp_ratio_aws.py export-ignore
+usecases/ssb/plot/comp_prune_ablation.py export-ignore
+plot/nvlink.py export-ignore

@@ -1,0 +1,364 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3,customer_factor,extra_workers,add_cpu_threads
+../bin/ssb --dataflow=SSD2GPU2CPU --chunk_bytes=1048576,4194304,16777216,67108864 --comp_algo=UNCOMPRESSED,BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query1.1,query1.2,query1.3 --repeat=2 --scale_factor=100 --ssdpath=/dev/md0 --dbpath=/home/ubuntu/diskdb100.dat --store_offset=0 --workers=6
+#[INFO ] Loading table data from disk ...
+#[INFO ] Prejoining tables for metadata ...
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.1,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17284.7,0.00945,2520.69,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13475.5,0.00414,3157.23,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12881.5,0.0036,3158.03,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.1,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12763.9,0.009961,3158.6,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,140530,0.004041,2673.38,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41365.5,0.00374,629.745,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15851.2,0.00345,441.101,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9758.53,0.00459,467.925,,,,,1,1,1
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17512.4,0.00379,3158.01,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13344.4,0.00392,3157.16,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12877.1,0.00425,3157.56,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.2,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12767,0.00532,3159.02,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,139214,0.00344,1231.19,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41353,0.00406,618.48,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15849.7,0.00357,445.804,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.01 ms
+query1.2,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9782.39,0.00638,425.408,,,,,1,1,1
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17411.7,0.00437,3114.07,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13349.7,0.00384,3156.64,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.3,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12725.8,0.00505,3158.36,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.3,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12779.2,0.00722,3159.45,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,139228,0.00379,1243.15,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41376.2,0.00394,642.49,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15859.7,0.00377,441.498,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.01 ms
+query1.3,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9776.08,0.0052,426.33,,,,,1,1,1
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17721.6,0.00363,3153.75,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13475.5,0.003729,3155.83,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12542.9,0.00469,3158.16,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.1,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12823.4,0.00863,3158.62,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,139075,0.0035,1225.99,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41333.8,0.00394,626.111,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15872.9,0.00403,441.899,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 42056852386840
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.00 ms
+query1.1,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9770.22,0.00448,426.048,,,,,1,1,1
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17584.4,0.003991,3114.92,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13336.4,0.00344,3157.08,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12848.1,0.00418,3158.03,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.2,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12780.2,0.00855,3158.85,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,139083,0.0037,1251.1,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41351.8,0.0043,640.031,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.2,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15867.7,0.003891,442.461,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 9080947035194
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.01 ms
+query1.2,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9790.32,0.00602,425.775,,,,,1,1,1
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,1048576,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,239965784,117005366864,8400240640,8400232848,0,-1,17525.5,0.00389,3148.35,,,,,1,1,1
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,4194304,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,101387124,116833758060,8400240640,8400232848,0,-1,13327.8,0.003709,3156.03,,,,,1,1,1
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,16777216,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,190617996,116790868356,8400240640,8400232848,0,-1,12857.1,0.00409,3158.14,,,,,1,1,1
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 8400240640 bytes (0.00), took 0.01 ms
+query1.3,SSD2GPU2CPU,100,,6,67108864,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,708352880,116780120936,8400240640,8400232848,0,-1,12777.4,0.00972,3158.75,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 495767552 bytes (ratio of 0.10), using Cascaded and 4578 chunks of size 1048576
+#[INFO ] Compressed column lo_quantity (600016632) -> 431284224 bytes (ratio of 0.72), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781391360 bytes (ratio of 0.74), using Bitcomp and 4578 chunks of size 524288
+#[INFO ] Compressed column lo_discount (600016632) -> 262520832 bytes (ratio of 0.44), using ANS and 4578 chunks of size 131072
+#[INFO ] Compressed column meta_d_year (1200033264) -> 337682432 bytes (ratio of 0.28), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 633135104 bytes (ratio of 0.26), using Gdeflate and 4578 chunks of size 524288
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 444129280 bytes (ratio of 0.37), using Gdeflate and 4578 chunks of size 262144
+#[INFO ] chunk_num: 4578, tuples_per_chunk: 131072, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 4578 chunks (0.00), 0 of 2970963968 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,1048576,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3848304536,117005366864,2970963968,8400232848,0,-1,139107,0.00386,1226.53,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 488783872 bytes (ratio of 0.10), using Cascaded and 1145 chunks of size 4194304
+#[INFO ] Compressed column lo_quantity (600016632) -> 426782720 bytes (ratio of 0.71), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1772789760 bytes (ratio of 0.74), using Bitcomp and 1145 chunks of size 2097152
+#[INFO ] Compressed column lo_discount (600016632) -> 262635520 bytes (ratio of 0.44), using ANS and 1145 chunks of size 524288
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333209600 bytes (ratio of 0.28), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625901568 bytes (ratio of 0.26), using Gdeflate and 1145 chunks of size 2097152
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435380224 bytes (ratio of 0.36), using Gdeflate and 1145 chunks of size 1048576
+#[INFO ] chunk_num: 1145, tuples_per_chunk: 524288, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 1145 chunks (0.00), 0 of 2950991872 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,4194304,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,3750620340,116833758060,2950991872,8400232848,0,-1,41340.7,0.00405,622.302,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 489054208 bytes (ratio of 0.10), using Cascaded and 287 chunks of size 16777216
+#[INFO ] Compressed column lo_quantity (600016632) -> 426725376 bytes (ratio of 0.71), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1775853568 bytes (ratio of 0.74), using Bitcomp and 287 chunks of size 8388608
+#[INFO ] Compressed column lo_discount (600016632) -> 262148096 bytes (ratio of 0.44), using ANS and 287 chunks of size 2097152
+#[INFO ] Compressed column meta_d_year (1200033264) -> 332460032 bytes (ratio of 0.28), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 625770496 bytes (ratio of 0.26), using Gdeflate and 287 chunks of size 8388608
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 434614272 bytes (ratio of 0.36), using Gdeflate and 287 chunks of size 4194304
+#[INFO ] chunk_num: 287, tuples_per_chunk: 2097152, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 287 chunks (0.00), 0 of 2953781248 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,16777216,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,4005001932,116790868356,2953781248,8400232848,0,-1,15875.4,0.004351,440.977,,,,,1,1,1
+#[INFO ] Compressed column lo_orderdate (4800133056) -> 490336256 bytes (ratio of 0.10), using Cascaded and 72 chunks of size 67108864
+#[INFO ] Compressed column lo_quantity (600016632) -> 427622400 bytes (ratio of 0.71), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column lo_extendedprice (2400066528) -> 1781481472 bytes (ratio of 0.74), using Bitcomp and 72 chunks of size 33554432
+#[INFO ] Compressed column lo_discount (600016632) -> 262471680 bytes (ratio of 0.44), using ANS and 72 chunks of size 8388608
+#[INFO ] Compressed column meta_d_year (1200033264) -> 333135872 bytes (ratio of 0.28), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] Compressed column meta_d_yearmonthnum (2400066528) -> 627466240 bytes (ratio of 0.26), using Gdeflate and 72 chunks of size 33554432
+#[INFO ] Compressed column meta_d_weeknuminyear (1200033264) -> 435671040 bytes (ratio of 0.36), using Gdeflate and 72 chunks of size 16777216
+#[INFO ] chunk_num: 72, tuples_per_chunk: 8388608, Tuples total 600016632
+#[INFO ] The result is: 2468788349493
+#[INFO ] Pruned: 0 of 72 chunks (0.00), 0 of 2961911808 bytes (0.00), took 0.00 ms
+query1.3,SSD2GPU2CPU,100,,6,67108864,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,23583784960,5183339696,116780120936,2961911808,8400232848,0,-1,9784.29,0.00441,426.093,,,,,1,1,1

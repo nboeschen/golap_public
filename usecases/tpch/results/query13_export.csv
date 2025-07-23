@@ -1,0 +1,517 @@
+query,dataflow,scale_factor,core_pin,workers,chunk_bytes,nvchunk,comp_algo,sort_by,max_gpu_um_memory,pruning,pruning_param,pruning_p,pruning_m,col_filter_lo,col_filter_hi,simulate_compute_us,event_sync,device_mem_total,device_mem_used,host_mem_used,comp_bytes,uncomp_bytes,pruned_bytes,population_ms,comp_ms,prune_ms,time_ms,debug_0,debug_1,debug_2,debug_3
+# GPU   Info: NVIDIA A100-SXM4-40GB, 00000000:BD:00.0
+# Slurm Info: 34248 32 1 gres:gpu:1
+# ../../../bin/tpch --dataflow=SSD2GPU2CPU --chunk_bytes=8388608,33554432,134217728 --comp_algo=UNCOMPRESSED,BEST_BW_COMP --cuda_device=0 --init_variant=init_only --nvchunk=65536 --print=csv --query=query1,query3 --repeat=4 --scale_factor=100 --ssdpath=/raid/gds/300G.file --dbpath=/mnt/labstore/nboeschen/tpch/csv200/orders.csv --store_offset=0 --workers=6 --csv_delimiter=| --sort_by=natural --pruning=DONTPRUNE --pruning_param=16
+#[INFO ] Loading table data from disk ...
+#[WARN ] Stopping csv reader at line idx 15000000, no slots left (15000000 total)
+#[WARN ] Stopping csv reader at line idx 1000000, no slots left (1000000 total)
+#[WARN ] Stopping csv reader at line idx 20000000, no slots left (20000000 total)
+#[WARN ] Stopping csv reader at line idx 80000000, no slots left (80000000 total)
+#[WARN ] Stopping csv reader at line idx 150000000, no slots left (150000000 total)
+#[WARN ] Stopping csv reader at line idx 750000000, no slots left (750000000 total)
+# Loaded data from disk.
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,226083420,127011959188,26250010624,26250000000,0,-1,6798.42,0.014578,1467.72,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,882277530,127007550418,26250010624,26250000000,0,-1,6618.48,0.013275,1371.93,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523588910,127006450278,26250010624,26250000000,0,-1,6598.23,0.017954,1526.56,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 8054132736 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30900974172,127011959188,8054132736,26250000000,0,-1,43504.7,0.038263,1961.33,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 8045355008 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32382921882,127007550418,8045355008,26250000000,0,-1,14686.5,0.070754,1127.1,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 8073945088 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327247662,127006450278,8073945088,26250000000,0,-1,7580.33,0.014027,1037.67,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.13, Lineitem timer: 1208.10,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8067211624,127065955288,24000004096,24000000000,0,-1,6431.14,0.012734,1208.1,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.03, Lineitem timer: 1206.05,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8666782630,127061546518,24000004096,24000000000,0,-1,6184.63,0.013065,1206.05,,,,
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.09, Lineitem timer: 1207.37,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,11081601594,127060446378,24000004096,24000000000,0,-1,6228.72,0.014267,1207.37,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.86, Lineitem timer: 538.04,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 6583193600 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,20104989352,127065955288,6583193600,24000000000,0,-1,16609.9,0.006242,538.036,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.03, Lineitem timer: 362.15,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 6580195328 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21459535078,127061546518,6580195328,24000000000,0,-1,7342.48,0.013155,362.151,,,,
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.01, Lineitem timer: 354.62,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 6601539584 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,26894252922,127060446378,6601539584,24000000000,0,-1,5337.86,0.012163,354.625,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,226083420,127011959188,26250010624,26250000000,0,-1,7195.55,0.018605,1487.78,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,882277530,127007550418,26250010624,26250000000,0,-1,6630.72,0.01574,1415.7,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523588910,127006450278,26250010624,26250000000,0,-1,6645.13,0.01636,1486.46,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 8054132736 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30900974172,127011959188,8054132736,26250000000,0,-1,43372.7,0.012895,1959.97,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 8045355008 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32382921882,127007550418,8045355008,26250000000,0,-1,14535.9,0.013526,1105.25,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 8073945088 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327247662,127006450278,8073945088,26250000000,0,-1,7489.64,0.037461,1192.67,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.89, Lineitem timer: 1217.54,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8067211624,127065955288,24000004096,24000000000,0,-1,6335.53,0.013274,1217.54,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 213.69, Lineitem timer: 1212.46,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8666782630,127061546518,24000004096,24000000000,0,-1,6212.78,0.013376,1212.46,,,,
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.36, Lineitem timer: 1211.16,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,11081601594,127060446378,24000004096,24000000000,0,-1,6222.15,0.013726,1211.16,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.09, Lineitem timer: 542.35,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 6583193600 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,20104989352,127065955288,6583193600,24000000000,0,-1,16431.9,0.013716,542.345,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.27, Lineitem timer: 362.69,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 6580195328 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21459535078,127061546518,6580195328,24000000000,0,-1,7330.44,0.012383,362.69,,,,
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 213.90, Lineitem timer: 360.57,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 6601539584 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,26894252922,127060446378,6601539584,24000000000,0,-1,5305.6,0.013044,360.569,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,226083420,127011959188,26250010624,26250000000,0,-1,7217.93,0.012343,1490.18,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,882277530,127007550418,26250010624,26250000000,0,-1,6641.12,0.018635,1393.53,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523588910,127006450278,26250010624,26250000000,0,-1,6641.71,0.019437,1459.36,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 8054132736 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30900974172,127011959188,8054132736,26250000000,0,-1,43322.7,0.016,1886.78,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 8045355008 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32382921882,127007550418,8045355008,26250000000,0,-1,14574.8,0.016822,1387.17,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 8073945088 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327247662,127006450278,8073945088,26250000000,0,-1,7507.46,0.014938,1232.91,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.94, Lineitem timer: 1221.80,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8067211624,127065955288,24000004096,24000000000,0,-1,6357.68,0.006633,1221.8,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.07, Lineitem timer: 1196.39,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8666782630,127061546518,24000004096,24000000000,0,-1,6138.88,0.012684,1196.39,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.06, Lineitem timer: 1205.74,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,11081601594,127060446378,24000004096,24000000000,0,-1,6194.01,0.012134,1205.74,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.92, Lineitem timer: 526.91,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 6583193600 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,20104989352,127065955288,6583193600,24000000000,0,-1,16684.5,0.012834,526.914,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.82, Lineitem timer: 363.10,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 6580195328 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21459535078,127061546518,6580195328,24000000000,0,-1,7338.43,0.013015,363.104,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.31, Lineitem timer: 359.77,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 6601539584 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,26894252922,127060446378,6601539584,24000000000,0,-1,5347.97,0.013676,359.774,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,226083420,127011959188,26250010624,26250000000,0,-1,7240.84,0.045396,1537.7,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,882277530,127007550418,26250010624,26250000000,0,-1,6616.24,0.009689,1420.35,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 26250010624 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,3523588910,127006450278,26250010624,26250000000,0,-1,6603.24,0.018195,1529.06,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 8054132736 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,30900974172,127011959188,8054132736,26250000000,0,-1,43430.7,0.013235,1881.44,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 8045355008 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,32382921882,127007550418,8045355008,26250000000,0,-1,14562.4,0.012774,1180.87,,,,
+#[INFO ] Returnflag, Linestatus, sum_qty, sum_base_price, sum_disc_price, sum_charge, avg_qty, avg_price, avg_disc, count_order
+# A, F, 4718723352, 707564140829529, 672184132392788, 699070777630536, 25.49, 38235.82, 0.05, 185052685
+# R, F, 4719108671, 707623672838125, 672241501185783, 699132252680370, 25.49, 38236.67, 0.05, 185064113
+# N, F, 123175111, 18468350220614, 17544983336884, 18246732388818, 25.50, 38236.75, 0.04, 4829999
+# N, O, 9295111530, 1393777318020662, 1324088657892965, 1377051522299279, 25.50, 38237.31, 0.04, 364507154
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 8073945088 bytes (0.00)
+query1,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,38327247662,127006450278,8073945088,26250000000,0,-1,7709.46,0.130347,1295.2,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.99, Lineitem timer: 1235.72,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8067211624,127065955288,24000004096,24000000000,0,-1,7087.17,0.027643,1235.72,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.19, Lineitem timer: 1221.67,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,8666782630,127061546518,24000004096,24000000000,0,-1,6837.7,0.029105,1221.67,,,,
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.14, Lineitem timer: 1224.12,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 24000004096 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,UNCOMPRESSED,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,11081601594,127060446378,24000004096,24000000000,0,-1,6819.98,0.030307,1224.12,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 214.33, Lineitem timer: 538.54,
+#[INFO ] Pruned: 0 of 716 chunks (0.00), 0 of 6583193600 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,8388608,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,20104989352,127065955288,6583193600,24000000000,0,-1,16691,0.012093,538.536,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] 565699 total results, Order timer: 213.92, Lineitem timer: 362.65,
+#[INFO ] Pruned: 0 of 179 chunks (0.00), 0 of 6580195328 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,33554432,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,21459535078,127061546518,6580195328,24000000000,0,-1,7332.66,0.013505,362.652,,,,
+#[INFO ] l_orderkey: 87560065, o_orderdate: 789264000, o_shippriority: 0, revenue: 6704384
+#[INFO ] l_orderkey: 487628289, o_orderdate: 788659200, o_shippriority: 0, revenue: 14678060
+#[INFO ] l_orderkey: 334584707, o_orderdate: 792374400, o_shippriority: 0, revenue: 6859089
+#[INFO ] l_orderkey: 571826404, o_orderdate: 786672000, o_shippriority: 0, revenue: 6324855
+#[INFO ] l_orderkey: 13853829, o_orderdate: 792979200, o_shippriority: 0, revenue: 4274452
+#[INFO ] l_orderkey: 410168902, o_orderdate: 788227200, o_shippriority: 0, revenue: 5436854
+#[INFO ] l_orderkey: 300577637, o_orderdate: 786585600, o_shippriority: 0, revenue: 14360275
+#[INFO ] l_orderkey: 468038693, o_orderdate: 785894400, o_shippriority: 0, revenue: 12594838
+#[INFO ] l_orderkey: 588258243, o_orderdate: 793152000, o_shippriority: 0, revenue: 10307803
+#[INFO ] l_orderkey: 96301383, o_orderdate: 788659200, o_shippriority: 0, revenue: 940040
+#[INFO ] l_orderkey: 103668801, o_orderdate: 795052800, o_shippriority: 0, revenue: 8645760
+#[INFO ] 565699 total results, Order timer: 214.08, Lineitem timer: 390.72,
+#[INFO ] Pruned: 0 of 45 chunks (0.00), 0 of 6601539584 bytes (0.00)
+query3,SSD2GPU2CPU,100,,6,134217728,65536,BEST_BW_COMP,natural,0,DONTPRUNE,16,0.01,8192,-,-,-1,1,42298834944,26894252922,127060446378,6601539584,24000000000,0,-1,5342.74,0.012704,390.717,,,,
+#DONE
