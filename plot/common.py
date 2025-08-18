@@ -5,23 +5,6 @@ from collections import defaultdict
 _palette = color_palette("muted")
 
 CONFIG = defaultdict(dict)
-# CONFIG["Golap BEST_BW_COMP"] = {"color":_palette[0]}
-# CONFIG["Golap UNCOMPRESSED"] = {"color":_palette[1],"hatch":"//"}
-# CONFIG["GPU BEST_BW_COMP"] = {"color":_palette[0]}
-# CONFIG["GPU UNCOMPRESSED"] = {"color":_palette[1],"hatch":"//"}
-
-# CONFIG["DuckDB UNCOMPRESSED"] = {"color":_palette[2],"hatch":"//"}
-# CONFIG["DuckDB SNAPPY"] = {"color":_palette[3]}
-# CONFIG["DuckDB GZIP"] = {"color":_palette[4]}
-# CONFIG["DuckDB ZSTD"] = {"color":_palette[5]}
-
-# CONFIG["CPU UNCOMPRESSED"] = {"color":_palette[2],"hatch":"//"}
-# CONFIG["CPU SNAPPY"] = {"color":_palette[3]}
-# CONFIG["CPU GZIP"] = {"color":_palette[4]}
-# CONFIG["CPU ZSTD"] = {"color":_palette[5]}
-
-# CONFIG["Dask UNCOMPRESSED"] = {"color":_palette[6],"hatch":"//"}
-# CONFIG["Handcoded INMEM -"] = {"color":_palette[8],"hatch":"--"}
 CONFIG["Achievable Maximum Scan BW"] = {"hatch":"/"}
 
 # fixed measurements

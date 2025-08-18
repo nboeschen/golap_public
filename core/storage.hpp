@@ -217,14 +217,5 @@ private:
 };
 
 
-// class DiskCacheManager : public util::Singleton<DiskCacheManager> {
-// public:
-//     uint64_t store_offset = 0;
-//     uint64_t total_size = StorageManager::get().size();
-//     void add(std::string &colname, uint64_t num_tuples, golap::CompInfo &compinfo){
-//     }
-// };
-
-
 
 } // end of namespace

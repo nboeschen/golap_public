@@ -127,11 +127,11 @@ def plot(files,ax,title,x_var,metric="time_ms",sort=True,shape="bar",with_optima
     return ax
 
 
-SSB_COMM_DATA = parse_commercial("../usecases/ssb/results/systemx_export.csv")
-for idx,row in SSB_COMM_DATA.iterrows():
-    if row.uncomp_bytes == 0:
-        SSB_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query)
-SSB_COMM_DATA["query"] = "SSB\n" + SSB_COMM_DATA["query"].str.slice(stop=6)
+# SSB_COMM_DATA = parse_commercial("../usecases/ssb/results/systemx_export.csv")
+# for idx,row in SSB_COMM_DATA.iterrows():
+#     if row.uncomp_bytes == 0:
+#         SSB_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query)
+# SSB_COMM_DATA["query"] = "SSB\n" + SSB_COMM_DATA["query"].str.slice(stop=6)
 
 
 SSB_GOLAP_DATA = pd.read_csv("../usecases/ssb/results/query_export.csv",comment="#")
@@ -169,7 +169,7 @@ SSB_INMEM["comp_algo"] = "INMEM"
 SSB_INMEM["query"] = "SSB\n" + SSB_INMEM["query"].str.slice(stop=6)
 # SSB_INMEM["query"] = "SSB (Synth Data)" # avg over all queries
 
-SSB_MORDRED = pd.read_csv("../results/mordred_all_queries_export.csv",comment="#")
+SSB_MORDRED = pd.read_csv("./mordred_all_queries_export.csv",comment="#")
 SSB_MORDRED = SSB_MORDRED.loc[SSB_MORDRED.groupby(["query"],as_index=False)["time_ms"].transform("idxmin").unique()]
 SSB_MORDRED["uncomp_bytes"] = 0
 SSB_MORDRED["comp_bytes"] = 0
@@ -178,11 +178,11 @@ SSB_MORDRED["query"] = "SSB\n" + SSB_MORDRED["query"].str.slice(stop=6)
 
 
 # TAXI DATASET
-TAXI_COMM_DATA = parse_commercial("../usecases/taxi/results/systemx_export.csv","TAXI")
-for idx,row in TAXI_COMM_DATA.iterrows():
-    if row.uncomp_bytes == 0:
-        TAXI_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query)
-TAXI_COMM_DATA["query"] = "TAXI\n" + TAXI_COMM_DATA["query"].str.slice(stop=6)
+# TAXI_COMM_DATA = parse_commercial("../usecases/taxi/results/systemx_export.csv","TAXI")
+# for idx,row in TAXI_COMM_DATA.iterrows():
+#     if row.uncomp_bytes == 0:
+#         TAXI_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query)
+# TAXI_COMM_DATA["query"] = "TAXI\n" + TAXI_COMM_DATA["query"].str.slice(stop=6)
 
 
 TAXI_GOLAP_DATA = pd.read_csv("../usecases/taxi/results/query_export.csv",comment="#")
@@ -219,11 +219,11 @@ TAXI_INMEM["query"] = "TAXI\n" + TAXI_INMEM["query"].str.slice(stop=6)
 
 
 #tpch dataset
-TPCH_COMM_DATA = parse_commercial("../usecases/tpch/results/systemx_export.csv","TPCH")
-for idx,row in TPCH_COMM_DATA.iterrows():
-    if row.uncomp_bytes == 0:
-        TPCH_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query,"TPCH")
-TPCH_COMM_DATA["query"] = "TPC-H\n" + TPCH_COMM_DATA["query"].str.slice(stop=6)
+# TPCH_COMM_DATA = parse_commercial("../usecases/tpch/results/systemx_export.csv","TPCH")
+# for idx,row in TPCH_COMM_DATA.iterrows():
+#     if row.uncomp_bytes == 0:
+#         TPCH_COMM_DATA.loc[idx,"uncomp_bytes"] = common.uncomp_bytes(row.scale_factor,row.query,"TPCH")
+# TPCH_COMM_DATA["query"] = "TPC-H\n" + TPCH_COMM_DATA["query"].str.slice(stop=6)
 
 TPCH_GOLAP_DATA = pd.concat([pd.read_csv("../usecases/tpch/results/query_export.csv",comment="#"),
                         pd.read_csv("../usecases/tpch/results/query13_export.csv",comment="#").query("not query.str.startswith('query1')"),
@@ -253,7 +253,7 @@ files = [
              ["Golap", pd.concat([SSB_GOLAP_DATA])],
              ["DuckDB", pd.concat([SSB_DUCKDB,])],
              # ["Handcoded", pd.concat([SSB_INMEM,TAXI_INMEM])],
-             ["System X", pd.concat([SSB_COMM_DATA])],
+             # ["System X", pd.concat([SSB_COMM_DATA])],
              ["DuckDB", SSB_DUCKDB_PRUNED],
              ["Mordred", SSB_MORDRED],
             ]
@@ -261,7 +261,7 @@ files2 = [
              ["Golap", pd.concat([TAXI_GOLAP_DATA,TPCH_GOLAP_DATA])],
              ["DuckDB", pd.concat([TAXI_DUCKDB,TPCH_DUCKDB])],
              # ["Handcoded", pd.concat([TAXI_INMEM])],
-             ["System X", pd.concat([TAXI_COMM_DATA,TPCH_COMM_DATA])],
+             # ["System X", pd.concat([TAXI_COMM_DATA,TPCH_COMM_DATA])],
             ]
 
 # axes = plot(files,"Select","query","comp_bytes_gb",sort=False,shape="bar")

@@ -67,22 +67,6 @@ TEST_CASE("Column", "[table]") {
 }
 
 
-TEST_CASE("Basic Row Table", "[table]"){
-    { // stack for cuda-memcheck
-    checkCudaErrors(cudaSetDevice(TEST_GPU_ID));
-    golap::RowTable<golap::HostMem,AType> host_tbl(512,"id,name,discount");
-    host_tbl[400].discount = 0.1;
-    REQUIRE(host_tbl.describe() == "UnnamedTable(id, name, discount, )");
-
-
-    golap::RowTable<golap::DeviceMem,AType> dev_table(512,"id,name,discount");
-
-    REQUIRE(dev_table.describe() == "UnnamedTable(id, name, discount, )");
-
-    } // stack for cuda-memcheck
-    checkCudaErrors(cudaDeviceReset());
-}
-
 TEST_CASE("Column sort", "[table]") {
     checkCudaErrors(cudaSetDevice(TEST_GPU_ID));
     { // stack for cuda-memcheck

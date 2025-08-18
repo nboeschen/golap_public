@@ -26,10 +26,4 @@ make -j duckdb_ssb
 ../ssb/scripts/run_duckdb.sh 0
 ```
 
-## Comparison to Dask cudf
-```bash
-conda create -n rapids-env -c rapidsai -c nvidia -c conda-forge cudf=22.10 dask-cudf=22.10 python=3.8 cudatoolkit=11.4
-conda activate rapids-env
-../ssb/scripts/run_dask.sh 0
-```
 

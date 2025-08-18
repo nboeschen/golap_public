@@ -47,49 +47,6 @@ public:
 };
 
 
-/**
- * Basic row-layout table. Templated in specializations, so schema is fixed on declaration.
- */
-template <typename MEM_TYPE, typename RowType>
-class RowTable : public Table{
-public:
-    RowTable(uint64_t alloc_num, std::string attr_string):RowTable(alloc_num, attr_string, "UnnamedTable"){}
-    template <typename OTHER_MEM_TYPE>
-    RowTable(RowTable<OTHER_MEM_TYPE,RowType> &other):RowTable(other.num_slots, other.attr_string(), other.name){}
-    RowTable(uint64_t alloc_num, std::string attr_string, std::string tbl_name):Table(tbl_name){
-        for(auto &name: util::str_split(attr_string, ",")){
-            add_attribute(name);
-        }
-        data = std::make_shared<MEM_TYPE>(Tag<RowType>{}, alloc_num, 4096);
-        cached_ptr = data->ptr<RowType>();
-        Table::num_slots = alloc_num;
-    }
-
-    std::string attr_string(){
-        std::stringstream ss;
-        for(auto &attr:attributes){
-            ss << attr << ",";
-        }
-        return ss.str();
-    }
-
-    RowType* row_ptr(uint64_t index) {
-        return &cached_ptr[index];
-    }
-
-    RowType& operator[](uint64_t index) {
-        return cached_ptr[index];
-    }
-
-    uint64_t size_bytes(){
-        return data->size_bytes();
-    }
-
-    std::shared_ptr<MemBase> data;
-    RowType* cached_ptr;
-};
-
-
 
 /**
  * A fixed type version of Memory
